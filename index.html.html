@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>An Evening with SC&P — NYE on Sydney Harbour</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Work+Sans:wght@400;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* Late-60s cocktail palette */
+      --ink:#111013;
+      --paper:#f8f4ec;
+      --card:#fffdf7;
+      --brand:#c9a33b;     /* brass/gold */
+      --accent:#196e72;    /* teal glass */
+      --accent-2:#b04e2d;  /* vermilion */
+      --plum:#3a2032;      /* deep wine */
+      --line:#e6decc;
+      --shadow:0 24px 80px rgba(25,18,14,.12);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:"Work Sans",system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--ink);
+      background: radial-gradient(1500px 700px at 75% -10%, #efe3c2 0%, #eadcb5 18%, #eadcb5 22%, #efe6cf 33%, var(--paper) 60%) fixed no-repeat,
+                  linear-gradient(180deg,#fff8ea, #f7f2e6);
+    }
+
+    a{color:#0e5b7a;text-decoration:underline;text-underline-offset:2px}
+    .wrap{max-width:1120px;margin:0 auto;padding:24px}
+/* =====================
+   HEADER / HERO (clean)
+   ===================== */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1px;
+  background: linear-gradient(180deg, #fffefb 0%, #faf6ee 100%);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+/* Layout structure */
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Logo */
+.hero-logo {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: .08em;
+  background: #fffdf8;
+  text-transform: uppercase;
+  color: #574c38;
+}
+
+/* Headline */
+h1 {
+  margin: 1px 0 6px;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  line-height: 1.05;
+  font-size: clamp(34px, 5.2vw, 64px);
+}
+
+/* Subheading */
+.strap {
+  font-size: clamp(16px, 1.6vw, 20px);
+  color: #a8501d;
+}
+
+/* =====================
+   RESPONSIVE BEHAVIOUR
+   ===================== */
+
+/* Collapse grid on tablets */
+@media (max-width: 980px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Mobile styles — THE ONLY ONE YOU NEED */
+@media (max-width: 600px) {
+
+  .hero {
+    padding: 18px !important;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .hero-logo {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 30px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .strap {
+    font-size: 14px !important;
+    margin-top: 4px !important;
+  }
+}
+
+body {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+    .btn{
+      appearance:none; border:0; border-radius:1px; padding:12px 16px; font-weight:700; cursor:pointer;
+      box-shadow:var(--shadow);
+    }
+    .btn-primary{background:linear-gradient(135deg,var(--brand),#e8c863); color:#1b140b}
+    .btn-ghost{background:#fff; border:1px solid var(--line); color:#3b3427}
+
+    /* “Canvas Band" (kept for future effects) */
+    .scene{position:absolute; inset:0; pointer-events:none}
+    #sky{position:absolute; inset:0; width:100%; height:100%}
+    .water{position:absolute; left:0; right:0; bottom:0; height:28%;
+           background:linear-gradient(180deg, rgba(200, 201, 157, 0.14), rgba(9,14,25,0)); filter:blur(2px)}
+
+    /* Card grid */
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:22px;margin-top:26px}
+    .card{
+      grid-column:span 6; background:var(--card); border-radius:1px; border:1px solid var(--line);
+      box-shadow:var(--shadow); padding:22px;
+    }
+    .card h2{
+      margin:0 0 8px; font-family:"Libre Baskerville",serif; color:#3a2f1c;
+    }
+    @media (max-width:980px){.card{grid-column:span 12}}
+
+    .meta{color:#6a604b;font-size:14px;margin-bottom:10px}
+    .list{margin:0;padding-left:20px} .list li{margin:6px 0}
+
+    /* Roger Letter (typewriter card) */
+    .card.roger{
+      font-family:"Special Elite", monospace;
+      background:
+        radial-gradient(160px 80px at 30px 28px, rgba(0,0,0,.04), transparent 60%),
+        var(--card);
+      position:relative;
+      /* size knobs (you can override inline via --box-width/--box-height) */
+      width: var(--box-width, 400px);
+      height: var(--box-height, auto);
+      padding: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 1px;
+      background: #ebe7de;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: auto;
+    }
+    .card.roger:before{
+      content:"S C & P  —  INTERNAL MEMO";
+      position:absolute; top:14px; right:16px;
+      font:700 11px "Work Sans",system-ui; letter-spacing:.14em; color:#8a7c62;
+    }
+
+    /* Gallery (image links) */
+    .gallery-grid{
+      display:grid; grid-template-columns:repeat(12,1fr); gap:12px;
+    }
+    .shot{
+      grid-column:span 4; aspect-ratio:4/3; background:#eee; border-radius:1px; overflow:hidden; border:1px solid var(--line); position:relative
+    }
+    /* FIX: images were at 50%/50% — now they fill the frame properly */
+    .shot img{width:100%; height:100%; object-fit:cover; display:block}
+    .shot span{position:absolute; inset:auto 8px 8px 8px; background:rgba(255,255,255,.82); padding:6px 8px; border-radius:8px; font-size:12px}
+    @media (max-width:980px){.shot{grid-column:span 6}} 
+    @media (max-width:620px){.shot{grid-column:span 12}}
+
+    /* Footer */
+    footer{margin:34px 0 60px; text-align:center; color:#877a60}
+
+    /* Cocktail & Canape Menu (retro style) */
+    .menu-card {
+      font-family: "IBM Plex Sans Condensed", "Work Sans", sans-serif;
+      letter-spacing: 0.02em;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      color: #2e261b;
+      line-height: 1;
+    }
+    .menu-card h2 {
+      font-family: "Libre Baskerville", serif;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand);
+      margin-top: 0;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 6px;
+    }
+    .menu-card p { margin: 6px 0; font-size: 15px; }
+    .menu-card p strong { color: var(--accent-2); font-weight: 600; }
+
+    /* ===== DIRECTORY BOARD LOOK (Schedule card) ===== */
+    article.card[aria-labelledby="sched"] {
+      background-image: url("https://woollieandfeltie.co.uk/image/catalog/SHEET_FELT_WOOL_VISCOSE_MIX_TURQUOISE_1K.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #fff;
+      font-family: "Libre Baskerville", monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 24px;
+      border-radius: 4px;
+    }
+    article.card[aria-labelledby="sched"] h2 {
+      font-family: "Libre Baskerville", serif;
+      color: #c9a33b;
+      letter-spacing: 0.08em;
+      text-shadow: 0 1px 2px rgba(0,0,0,.6);
+      margin-bottom: 14px;
+    }
+    .schedule li {
+      border-bottom: 1px solid rgb(255, 255, 255);
+      padding: 6px 0 10px;
+      margin-bottom: 4px;
+    }
+    .schedule .toggle {
+      all: unset;
+      cursor: pointer;
+      display: block;
+      width: 100%;
+      color: #f1f5f3;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 1.4;
+      text-shadow: 0 1px 2px rgba(0,0,0,.5);
+      transition: color .2s ease, transform .2s ease;
+      position: relative;
+    }
+    .schedule .toggle:hover { color: #c9a33b; transform: translateX(2px); }
+    .schedule .toggle::after {
+      content: "›";
+      position: absolute;
+      right: 0;
+      opacity: 0.1;
+      transform: rotate(90deg);
+      transition: transform .25s ease;
+    }
+    .schedule li.open .toggle::after { transform: rotate(-90deg); }
+
+    /* Details area (schedule) — now font is configurable */
+    .schedule .details {
+      display: none;
+      margin: 8px 0 10px;
+      color: #ffffff;
+      font-size: 0.9em;
+      letter-spacing: 0.03em;
+      font-family: var(--details-font, "Georgia", serif);
+    }
+    .schedule li.open .details { display: block; }
+
+    /* Retro Mad Men Access card (kept for future use) */
+    .card.access-madmen {
+      --madmen-bg: #f4efe5;           
+      --madmen-border: #b92e2e;       
+      --madmen-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --madmen-width: 460px;
+      --madmen-height: auto;
+
+      width: var(--madmen-width);
+      height: var(--madmen-height);
+      background: var(--madmen-bg);
+      border: 3px solid var(--madmen-border);
+      border-radius: 4px;
+      padding: 1.8rem 2rem;
+      box-shadow: 4px 4px 0 #00000020;
+      font-family: var(--madmen-font);
+      color: #222;
+      position: relative;
+      overflow: hidden;
+    }
+    .card.access-madmen::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 80%, rgba(185,46,46,0.08));
+      pointer-events: none;
+    }
+    .card.access-madmen h2 {
+      margin-top: 0;
+      font-size: 1.4em;
+      letter-spacing: 0.05em;
+      color: var(--madmen-border);
+      text-transform: uppercase;
+      font-weight: 700;
+      border-bottom: 2px solid var(--madmen-border);
+      padding-bottom: 6px;
+      margin-bottom: 0.8rem;
+    }
+    .card.access-madmen .meta {
+      font-size: 0.95em;
+      line-height: 1.5;
+      letter-spacing: 0.03em;
+      color: #333;
+    }
+
+    /* ===== FAQ: Roger Sterling Edition (full-width + responsive) ===== */
+    .faq-card {
+      grid-column: 1 / -1;              /* span the whole grid */
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7e/Felt_texture_background_teal.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #b04e2d;
+      border: 2px solid #b04e2d;
+      border-radius: 1px;
+      padding: 36px 48px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+      font-family: 'Work Sans', sans-serif;
+
+      /* Responsive width: max 1000px but shrink on mobile */
+      width: min(100%, 1000px);
+      margin: 0.1px auto;
+    }
+    @media (max-width:700px){
+      .faq-card{padding:24px 20px}
+    }
+    .faq-card h2 {
+      font-family: 'Libre Baskerville', serif;
+      color: #b04e2d; /* Title */
+      font-size: 25px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+    }
+    .faq-list { list-style: none; padding: 0; margin: 0; }
+    .faq-toggle {
+      all: unset;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 20px;
+      color: #108494; /*FAQ box text*/
+      padding: 14px 0;
+      border-bottom: 1px dashed rgba(141, 141, 141, 0.3);
+      transition: color .3s ease, letter-spacing .2s ease;
+    }
+    .faq-toggle::after {
+      content: '+';
+      font-size: 22px;
+      color: #d6b75a;
+      transition: transform .3s ease;
+    }
+    .faq-list li.open .faq-toggle::after { transform: rotate(45deg); }
+    .faq-toggle:hover { color: #ffe997; letter-spacing: 0.6px; }
+
+    .faq-details {
+      display: none;
+      color: #f4f1e3;
+      background: rgb(201, 92, 3);
+      border-left: 4px solid #e7c97c;
+      border-radius: 1px;
+      /* FIX: "IMB Plex Mono" -> "IBM Plex Mono" */
+      font-family: 'Work Sans', sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      padding: 14px 18px;
+      margin: 8px 0 18px;
+    }
+    .faq-list li.open .faq-details { display: block; }
+
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 50px); /* 3 or 4 per row depending on width */
+  gap: 1px; /* ← tighten spacing between columns and rows */
+  justify-content: start;
+  align-items: start;
+  margin-bottom: 5px; /* small separation between palette groups */
+}
+
+.swatch {
+  background: var(--swatch);
+  height: 60px;
+  width: 60px;
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+  transition: 
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    z-index 0.2s ease;
+}
+
+.swatch span {
+  position: absolute;
+  bottom: 5px;
+  left: 8px;
+  font-size: 10px;
+  font-family: 'Work Sans', sans-serif;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,.5);
+}
+
+/* 🎨 The “lift” on hover */
+.swatch:hover {
+  transform: translateY(-8px);        /* lifts the chip */
+  box-shadow: 0 10px 20px rgba(0,0,0,.25);
+  z-index: 5;   
+  text-shadow: 0 2px 4px rgba(0,0,0,.6);
+  color: #fffef8;                      /* makes sure it sits above others */
+}
+
+.palette-preview {
+  margin-top: 18px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  height: 70px;
+  display: flex;
+  overflow: hidden;
+  background: #f7f5ee;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  color: #777;
+}
+
+.palette-preview div {
+  flex: 1;
+  height: 100%;
+}
+
+.placeholder {
+  text-align: center;
+  width: 100%;
+}
+
+.card h2 {
+  margin-bottom: 4px; /* closes gap between title + byline */
+}
+
+.card p {
+  margin-top: 0;
+  margin-bottom: 5px; /* subtle spacing before subtitle */
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 16px; /* slightly larger to separate from content */
+}
+
+/* =======================
+   UNIVERSAL MOBILE SCALER
+   ======================= */
+@media (max-width: 600px) {
+
+  body {
+    font-size: 15px; /* overall scale down */
+  }
+
+  .wrap {
+    padding: 12px; /* tighter outer padding */
+  }
+
+  .grid {
+    gap: 14px; /* smaller spacing between cards */
+  }
+
+  .card {
+    padding: 16px; /* softer card padding */
+  }
+
+  .hero {
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 30px !important; /* scaled headline */
+  }
+
+  .strap {
+    font-size: 14px !important;
+  }
+
+  .faq-card {
+    padding: 20px;
+  }
+
+  .menu-card {
+    padding: 16px;
+  }
+}
+
+#gate {
+  position: fixed;
+  inset: 0;
+  background: #f8f4ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.gate-inner {
+  background: white;
+  padding: 28px 36px;
+  border-radius: 4px;
+  border: 1px solid #ddd2bd;
+  box-shadow: 0 12px 40px rgba(0,0,0,.15);
+  font-family: "Libre Baskerville", serif;
+  text-align: center;
+}
+
+#guestCode {
+  padding: 10px 14px;
+  width: 120px;
+  font-size: 18px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-top: 10px;
+}
+
+#gate button {
+  margin-top: 14px;
+  padding: 10px 18px;
+  font-weight: 700;
+  border: 0;
+  background: #c9a33b;
+  color: #1b140b;
+  cursor: pointer;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px rgba(0,0,0,.1);
+}
+
+#gateError {
+  color: #b04e2d;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+
+  </style>
+</head>
+<body>
+<div id="gate">
+  <div class="gate-inner">
+    <h2>Happy (Almost) New Year!</h2>
+    <p>Password is the DISCOVER KIRRIBILLI number on your invitation, with two 00s in front.</p>
+    <input id="guestCode" type="password" placeholder="###">
+    <button onclick="checkCode()">Enter</button>
+    <p id="gateError"></p>
+  </div>
+</div>
+
+  <div class="wrap">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="t1">
+      <div class="scene" aria-hidden="true">
+        <canvas id="sky"></canvas>
+        <div class="water"></div>
+      </div>
+
+      <div class="hero-inner">
+        <div>             
+          <img src="https://i.imgur.com/MVFuquL.png" alt="Sterling Cooper & Partners Logo" class="hero-logo">
+          <p class="strap">"...Because, when Madison Avenue is freezing, we prefer our ice in a glass."</p>
+          <div class="cta-row">
+          </div>
+        </div>
+
+        <aside>
+          <div class="card">
+            <h2>Key Details</h2>
+            <ul class="list">
+              <li><strong>Date:</strong> Wednesday, <em>31 December</em></li>
+              <li><strong>Time:</strong> From <em>7:00 PM</em></li>
+              <li><strong>Theme:</strong> <em>Mad Men</em> ('60s fashion)</li>
+              <li><strong>Fireworks:</strong> <em>9:00 PM & 12:00 AM</em></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- GRID -->
+    <section class="grid">
+
+      <!-- Roger Letter -->
+      <article 
+        class="card roger printable" 
+        aria-labelledby="r1"
+        style="--box-width: 400px; --box-height: 550px;"
+      >
+        <h2 id="r1">An Evening with SC&amp;P</h2>
+        <p>Sydney may not have the snowdrifts of New York, but don’t let the sunshine fool you. Nights by the water grow nippy, so the occasion calls for suits and ties, or fashionable clubwear.</p> 
+        <p>Beatniks and hippies welcome, provided they don't arrive shoeless and bring the "good vibrations" with them.</p>
+        <p>For the ladies: as Abraham Lincoln once put it, "the higher the hair, the better the **luck** -- but the shorter the **dress**, the better the --" (he was cut-off mid-sentence by a waiter dropping a tray).</p>
+        <p>Please send your response by December 7.</p>
+
+        <p>— <strong>R. STERLING</strong></p>
+      </article>
+
+      <!-- SCHEDULE: Accordion Style -->
+      <article class="card" aria-labelledby="sched">
+        <h2 id="sched">Schedule</h2>
+        <ul class="list schedule">
+          <li>
+            <button class="toggle"><strong>7/00</strong> — Sunset Drinks & Canapés</button>
+            <div class="details">Served on the harbour.</div>
+          </li>
+          <li>
+            <button class="toggle"><strong>8/00</strong> — SC&P Presents: Trivia</button>
+            <div class="details">The ultimate twentieth-century trivia, SC&P-style, courtesy of our in-house Creative team. Play in pairs. Winners receive a prize.</div>
+          </li>
+          <li>
+            <button class="toggle"><strong>9/00</strong> — Fireworks and Champagne</button>
+            <div class="details">The first display.</div>
+          </li>
+          <li>
+            <button class="toggle"><strong>9/30</strong> — SC&P Presents: Poker</button>
+            <div class="details">$20 buy-in minimum.</div>
+          </li>
+          <li>
+            <button class="toggle"><strong>11/45</strong> — SC&P’s Countdown</button>
+            <div class="details">The agency’s official countdown with broadcast feed and toast.</div>
+          </li>
+          <li>
+            <button class="toggle"><strong>12/00</strong> — Midnight Fireworks</button>
+            <div class="details">Sydney’s main show — visible directly across the Harbour. Grab a spot on the patio, or watch the broadcast live from inside.</div>
+          </li>
+          <li>
+            <button class="toggle"><strong>12/15</strong> — SC&P Presents: Hershey's Buffet</button>
+            <div class="details">A dessert buffet for our guests, proudly sponsored by Hershey's.</div>
+          </li>
+          <li>
+            <button class="toggle"><strong>1/00</strong> — Smoker’s Lounge</button>
+            <div class="details">Wind down with cigars and music while the streets clear.</div>
+          </li>
+        </ul>
+      </article>
+
+      <!-- House Menu -->
+      <article class="card menu-card" aria-labelledby="menu">
+        <h2>Sunset Canapés (7:00-7:45)</h2>
+        <p><strong>Tiger Prawns</strong> — fresh on ice.</p>
+        <p><strong>Sydney Rock Oysters</strong> — fresh on ice.</p>
+        <p><strong>Seasonal Fruit</strong> — Kensington Pride mangoes, Australian cherries.</p>
+
+        <h2>Vintage Canapés (8:30-9:00)</h2>  
+        <p><strong>Prawn Cocktails</strong> — vintage-style with cocktail sauce.</p>
+        <p><strong>Deviled Eggs</strong> — vintage-style, with smoked paprika and parsley.</p>
+        <p><strong>Prosciutto-Wrapped Melon</strong> — honeydew and rockmelon.</p>        
+        <p><strong>Chip ’n’ Dip</strong> —  California dip, Ruffles.</p>
+        <h2>Fondue (10:00-10:30)</h2>
+        <p><strong>Cheese Fondue</strong> — with bread, fresh fruit and veggies.</p>        
+        <p><strong>Orange Sherbet</strong> — with thyme.</p>
+        <h2>Hershey's Dessert Buffet (12:15)</h2>
+
+
+        <h2 id="menu">Bar</h2>
+
+        <p><strong>7–8 — Bloody Mary:</strong> tomato juice, vodka, lime, jalapeno vinegar.</p>
+        <p><strong>8–9 — Gimlet: </strong>gin, lime, sugar, finger lime pearls.</p>
+        <p><strong>9–10 — Vodka Martini: </strong>vodka, dry vermouth, olive and a twist.</p>
+        <p><strong>10–11 — Old-Fashioned: </strong>whiskey, bitters, sugar, burned orange peel.</p>
+        <p><strong>11–Midnight — Manhattan: </strong>whiskey, sweet vermouth, bitters.</p>
+        <p><strong>Beer: </strong>Heineken, "Albo" Pale Ale (Kirribilli Special).</p>
+        <p><strong>Non-Alcoholic: </strong>Coca-Cola, Shirley Temple, Perrier</p>
+      </article>
+
+<!-- Color Swatch Panel -->
+<article class="card" aria-labelledby="palette">
+  <h2 id="palette">SC&P Presents: Colors of the 60s</h2>
+  <p>by Joan Harris</p>
+  <h3>Mix your palette by choosing up to 4 colours.</h3>
+
+<h4>Early 60s</h4>
+<div class="swatch-grid">
+  <div class="swatch" style="--swatch:#eee8dd;"><span>Ceramic</span></div>  
+  <div class="swatch" style="--swatch:#ddaecf;"><span>Rose</span></div> 
+  <div class="swatch" style="--swatch:#e90c3c;"><span>Cherry</span></div>   
+  <div class="swatch" style="--swatch:#d58e5c;"><span>Tan</span></div>
+  <div class="swatch" style="--swatch:#dfad8c;"><span>Peach</span></div>     
+  <div class="swatch" style="--swatch:#f4eaac;"><span>Butter</span></div>   
+  <div class="swatch" style="--swatch:#cad354;"><span>Chartreuse</span></div>
+  <div class="swatch" style="--swatch:#a3bb9a;"><span>Jade</span></div>
+  <div class="swatch" style="--swatch:#659155;"><span>Pine</span></div>
+  <div class="swatch" style="--swatch:#a4c1db;"><span>Robin's Egg</span></div> 
+  <div class="swatch" style="--swatch:#88afc5;"><span>Cerulean</span></div>       
+  <div class="swatch" style="--swatch:#447FA6;"><span>Mustang</span></div>  
+  <div class="swatch" style="--swatch:#4f7188;"><span>Military Blue</span></div>
+  <div class="swatch" style="--swatch:#6b7175;"><span>Military Grey</span></div>
+  <div class="swatch" style="--swatch:#929292;"><span>Steel</span></div>  
+</div>
+
+<h4>Mid 60s</h4>
+<div class="swatch-grid">
+  <div class="swatch" style="--swatch:#f84a70;"><span>Hot Pink</span></div>  
+  <div class="swatch" style="--swatch:#c31e1e;"><span>Crimson</span></div>
+  <div class="swatch" style="--swatch:#e5562b;"><span>Burned Orange</span></div>
+  <div class="swatch" style="--swatch:#f9931e;"><span>Tangerine</span></div>
+  <div class="swatch" style="--swatch:#ffbb00;"><span>Harvest Gold</span></div>
+  <div class="swatch" style="--swatch:#f1ea80;"><span>Lemon Curd</span></div>
+  <div class="swatch" style="--swatch:#9e9d46;"><span>Olive</span></div>
+  <div class="swatch" style="--swatch:#196e72;"><span>Teal</span></div>
+  <div class="swatch" style="--swatch:#0ed1b7;"><span>Turquoise</span></div>
+  <div class="swatch" style="--swatch:#0baee0;"><span>Sky Blue</span></div>
+  <div class="swatch" style="--swatch:#1c2c86;"><span>Navy</span></div>
+  <div class="swatch" style="--swatch:#a775d2;"><span>Lavender</span></div>
+  <div class="swatch" style="--swatch:#462e5c;"><span>Violet</span></div>
+  <div class="swatch" style="--swatch:#381a06;"><span>Dark Walnut</span></div>
+  <div class="swatch" style="--swatch:#2c2c2c;"><span>Charcoal</span></div>
+</div>
+
+<h4>Late 60s</h4>
+<div class="swatch-grid">
+  <div class="swatch" style="--swatch:#3a2032;"><span>Deep Wine</span></div>
+  <div class="swatch" style="--swatch:#601300;"><span>Burned Mahogany</span></div>  
+  <div class="swatch" style="--swatch:#b04e2d;"><span>Vermilion</span></div>
+  <div class="swatch" style="--swatch:#be9e7e;"><span>Oatmeal</span></div>
+  <div class="swatch" style="--swatch:#ffe600;"><span>Canary</span></div>
+  <div class="swatch" style="--swatch:#c9a33b;"><span>Brass Gold</span></div>
+  <div class="swatch" style="--swatch:#caac00;"><span>Mustard</span></div>
+  <div class="swatch" style="--swatch:#7a7930;"><span>Khaki</span></div>
+  <div class="swatch" style="--swatch:#54a0c4;"><span>Sky Blue</span></div>  
+</div>
+
+
+  <div id="palettePreview" class="palette-preview">
+    <p class="placeholder">Your palette will appear here.</p>
+  </div>
+</article>
+
+      <!-- Static Gallery placeholder container -->
+      <div id="gallery" class="gallery-grid" style="grid-column:1 / -1; margin-top:12px">
+        <!-- Shots appear here -->
+      </div>
+
+      <!-- FAQ: Roger Sterling Edition (FULL-WIDTH) -->
+      <article class="faq-card" aria-labelledby="faq">
+        <h2 id="faq">Question & Answers with Rod Sterling</h2>
+        <ul class="faq-list">
+          <li>
+            <button class="faq-toggle"><strong>Additional guests?</strong></button>
+            <div class="faq-details">You can bring 'em, but there's no guarantee security will let them in. However, should your plus one be of particular importance — say, an investor, a mistress, or someone who owns a yacht — I’m sure we can make the necessary adjustments.</div>
+          </li>
+          <li>
+            <button class="faq-toggle"><strong>What do we do when we arrive at a police checkpoint?</strong></button>
+            <div class="faq-details">There are workarounds, but generally police require proof of address. Apparently, being devastatingly charming still isn’t considered valid ID in Australia. Should you be unsuccessful in your schmoozing attempts; we'll collect you.</div>
+          </li>
+          <li>
+            <button class="faq-toggle"><strong>How do we get there?</strong></button>
+            <div class="faq-details">It depends on your distance and anticipated time of arrival. Trains will be running across the bridge until a certain time. Ferries to Kirribilli and Milson's Point will not run past 3pm. If you intend on bringing anything, bear in mind that you won't be within parking distance of a few streets if you *do* manage to park, closures are: *from 5pm* (Waruda, Kirribilli Ave. and surrounding streets), </div>
+          </li>
+          <li>
+            <button class="faq-toggle"><strong>Dress code?</strong></button>
+            <div class="faq-details">Evening attire, of-the-era: linen suits, ties, facial hair. Alternatively, golf polos and cardigans. Hats are welcome (unless tragic). For the ladies: minis, high hair, and even higher standards.</div>
+          </li>
+          <li>
+            <button class="faq-toggle"><strong>If there's rain?</strong></button>
+            <div class="faq-details">Covered, naturally. If the heavens open, we’ll relocate indoors — martinis travel well. The fireworks will be televised, and I assure you, they look just as expensive from the sofa.</div>
+          </li>
+        </ul>
+      </article>
+  <script>
+    /* ================= Accordion: Schedule ================= */
+    document.querySelectorAll('.schedule .toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const li = btn.closest('li');
+        const open = li.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    });
+
+    /* ================= Accordion: FAQ ================= */
+    document.querySelectorAll('.faq-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const li = btn.closest('li');
+        li.classList.toggle('open');
+      });
+    });
+
+    /* ================= RSVP ================= */
+    function handleRSVP(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const plus = document.getElementById('plus').value.trim();
+      const contact = document.getElementById('contact').value.trim();
+      const arrival = document.getElementById('arrival').value;
+      const notes = document.getElementById('notes').value.trim();
+      const to = 'cmarkinova@gmail.com'; // TODO: replace with your address or form endpoint
+      const subject = encodeURIComponent('NYE RSVP: '+name);
+      const body = encodeURIComponent(
+        `Name: ${name}\n+1: ${plus || '-'}\nMobile: ${contact}\nArrival: ${arrival}\nNotes: ${notes}`
+      );
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+      document.getElementById('rsvpStatus').textContent = 'Opening your email app… If nothing appears, copy the details and DM us!';
+    }
+
+    /* ================= GALLERY (image links) ================= */
+    const gallery = document.getElementById('gallery');
+    function addShot(){
+      const url = document.getElementById('imgUrl')?.value.trim();
+      if(!url) return;
+      const card = document.createElement('figure');
+      card.className = 'shot';
+      card.innerHTML = `<img alt="reference" src="${url}"><span>${new URL(url).hostname}</span>`;
+      gallery.prepend(card);
+      document.getElementById('imgUrl').value='';
+    }
+  </script>
+
+<script>
+const swatches = document.querySelectorAll('.swatch');
+const preview = document.querySelector('.palette-preview');
+const placeholder = document.querySelector('.placeholder');
+let selectedColours = [];
+
+swatches.forEach(swatch => {
+  const colour = swatch.style.getPropertyValue('--swatch').trim();
+
+  swatch.addEventListener('click', () => {
+    const isSelected = selectedColours.includes(colour);
+
+    if (isSelected) {
+      // Remove from selection
+      selectedColours = selectedColours.filter(c => c !== colour);
+      swatch.classList.remove('selected');
+    } else {
+      if (selectedColours.length >= 4) return; // limit to 4 colours
+      selectedColours.push(colour);
+      swatch.classList.add('selected');
+    }
+
+    updatePreview();
+  });
+});
+
+function updatePreview() {
+  preview.innerHTML = '';
+
+  if (selectedColours.length === 0) {
+    preview.appendChild(placeholder);
+    placeholder.style.display = 'block';
+    return;
+  } else {
+    placeholder.style.display = 'none';
+  }
+
+  selectedColours.forEach(colour => {
+    const div = document.createElement('div');
+    div.style.background = colour;
+    div.title = colour;
+    div.classList.add('palette-colour');
+
+    // click again inside the preview to remove
+    div.addEventListener('click', () => {
+      selectedColours = selectedColours.filter(c => c !== colour);
+      document.querySelectorAll('.swatch').forEach(s => {
+        if (s.style.getPropertyValue('--swatch').trim() === colour) {
+          s.classList.remove('selected');
+        }
+      });
+      updatePreview();
+    });
+
+    preview.appendChild(div);
+  });
+}
+</script>
+
+<script>
+  // Replace with YOUR list of guest numbers:
+  const validCodes = ["001", "002", "003", "004", "005", "006", "007", "008", "009"];
+
+  function checkCode() {
+    const code = document.getElementById("guestCode").value.trim();
+    const gate = document.getElementById("gate");
+    const error = document.getElementById("gateError");
+
+    if (validCodes.includes(code)) {
+      gate.style.display = "none";     // 🎉 unlocks the page
+    } else {
+      error.textContent = "Incorrect number. Please try again.";
+    }
+  }
+</script>
+
+</body>
+
+</html>
