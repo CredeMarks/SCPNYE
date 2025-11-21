@@ -563,40 +563,68 @@ body {
   }
 }
 
+/* ==========================
+   RESPONSIVE GATE OVERLAY
+   ========================== */
+
 #gate {
   position: fixed;
   inset: 0;
-  
-  background: url('https://cdn.ultraswank.net/uploads/sterling-cooper-dryper-pryce_office_01-1000x750.jpg') center center / cover no-repeat;
+  background: url('https://cdn.ultraswank.net/uploads/sterling-cooper-dryper-pryce_office_01-1000x750.jpg')
+    center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
+  padding: 1rem; /* gives breathing room on small screens */
 }
 
 .gate-inner {
   background: white;
-  padding: 28px 36px;
+  padding: clamp(1rem, 4vw, 2rem);  /* responsive padding */
   border-radius: 4px;
   border: 1px solid #ddd2bd;
   box-shadow: 0 12px 40px rgba(0,0,0,.15);
   font-family: "Libre Baskerville", serif;
   text-align: center;
+
+  width: clamp(260px, 80%, 420px);   /* ★ responsive container width */
 }
 
+.gate-logo {
+  width: clamp(90px, 25vw, 160px);   /* ★ logo scales smoothly */
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* Flip counter adjusts smoothly */
+.flip {
+  width: clamp(48px, 16vw, 90px);
+  height: clamp(64px, 22vw, 120px);
+  font-size: clamp(20px, 6vw, 50px);
+  padding: clamp(6px, 2vw, 14px) 0;
+}
+
+.flip-unit label {
+  font-size: clamp(10px, 3vw, 14px);
+}
+
+/* Input */
 #guestCode {
-  padding: 10px 14px;
-  width: 120px;
-  font-size: 18px;
+  padding: 0.6rem 0.9rem;
+  width: clamp(110px, 40vw, 160px);
+  font-size: clamp(14px, 4vw, 18px);
   text-align: center;
   border: 1px solid #ccc;
   border-radius: 3px;
-  margin-top: 10px;
+  margin-top: 1rem;
 }
 
+/* Button */
 #gate button {
-  margin-top: 14px;
-  padding: 10px 18px;
+  margin-top: 1rem;
+  padding: clamp(0.5rem, 2vw, 0.75rem) clamp(0.9rem, 4vw, 1.4rem);
+  font-size: clamp(13px, 4vw, 16px);
   font-weight: 700;
   font-family: "Work Sans", sans-serif;
   border: 0;
@@ -610,7 +638,7 @@ body {
 #gateError {
   color: #b04e2d;
   margin-top: 10px;
-  font-size: 14px;
+  font-size: clamp(12px, 3vw, 14px);
 }
 
 /* ===== FOLDER STACK COMPONENT ===== */
@@ -1237,3 +1265,4 @@ updateCountdown();
 </body>
 
 </html>
+
