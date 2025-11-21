@@ -4,13 +4,16 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>An Evening with SC&P — NYE on Sydney Harbour</title>
+  <title>An Evening with SC&P</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Work+Sans:wght@400;600;700&family=Special+Elite&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
+
 
   <style>
+
     :root{
       /* Late-60s cocktail palette */
       --ink:#111013;
@@ -30,8 +33,8 @@
       margin:0;
       font-family:"Work Sans",system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--ink);
-      background: radial-gradient(1500px 700px at 75% -10%, #efe3c2 0%, #eadcb5 18%, #eadcb5 22%, #efe6cf 33%, var(--paper) 60%) fixed no-repeat,
-                  linear-gradient(180deg,#fff8ea, #f7f2e6);
+      background: url('https://i.imgur.com/9lc14I0.jpeg') center center / cover repeat;
+                 
     }
 
     a{color:#0e5b7a;text-decoration:underline;text-underline-offset:2px}
@@ -44,7 +47,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 1px;
-  background: linear-gradient(180deg, #fffefb 0%, #faf6ee 100%);
+  background: linear-gradient(180deg, #fffefb 100%, #fffefb 100%);
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
   padding: 28px;
@@ -177,17 +180,18 @@ body {
     /* Roger Letter (typewriter card) */
     .card.roger{
       font-family:"Special Elite", monospace;
+      color:rgb(43, 21, 4);
       background:
         radial-gradient(160px 80px at 30px 28px, rgba(0,0,0,.04), transparent 60%),
         var(--card);
       position:relative;
       /* size knobs (you can override inline via --box-width/--box-height) */
-      width: var(--box-width, 400px);
+      width: var(--box-width, auto);
       height: var(--box-height, auto);
       padding: 1.5rem;
       border: 1px solid #ccc;
       border-radius: 1px;
-      background: #ebe7de;
+      background-image: url('https://img.freepik.com/premium-photo/old-paper-texture-background_118047-12801.jpg');
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       overflow: auto;
     }
@@ -196,6 +200,30 @@ body {
       position:absolute; top:14px; right:16px;
       font:700 11px "Work Sans",system-ui; letter-spacing:.14em; color:#8a7c62;
     }
+
+    /* Closures */
+    .card.closures{
+      font-family:"Passion One", sans-serif;
+      color:rgb(43, 21, 4);
+      font-size: 20px;
+      background-image: url('https://img.freepik.com/premium-photo/old-paper-texture-background_118047-12801.jpg');
+      position:relative;
+      /* size knobs (you can override inline via --box-width/--box-height) */
+      width: var(--box-width, auto);
+      height: var(--box-height, auto);
+      padding: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 1px;
+      background: #f7eed8;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: auto;
+    }
+    .card.closures:before{
+      content:"S C & P  —  INTERNAL MEMO";
+      position:absolute; top:14px; right:16px;
+      font:700 11px "Work Sans",system-ui; letter-spacing:.14em; color:#8a7c62;
+    }
+
 
     /* Gallery (image links) */
     .gallery-grid{
@@ -246,13 +274,13 @@ body {
       background-repeat: no-repeat;
       color: #fff;
       font-family: "Libre Baskerville", monospace;
-      text-transform: uppercase;
+      text-transform: lowercase;
       letter-spacing: 0.1em;
       padding: 24px;
       border-radius: 4px;
     }
     article.card[aria-labelledby="sched"] h2 {
-      font-family: "Libre Baskerville", serif;
+      font-family: "Passion One", sans-serif;
       color: #c9a33b;
       letter-spacing: 0.08em;
       text-shadow: 0 1px 2px rgba(0,0,0,.6);
@@ -343,10 +371,10 @@ body {
       color: #333;
     }
 
-    /* ===== FAQ: Roger Sterling Edition (full-width + responsive) ===== */
+    /* ===== FAQ ===== */
     .faq-card {
       grid-column: 1 / -1;              /* span the whole grid */
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7e/Felt_texture_background_teal.jpg');
+      background-image: url('https://thegraphicsfairy.com/wp-content/uploads/2020/07/Blank-Patina-Paper-2-GraphicsFairy.jpg');
       background-size: cover;
       background-position: center;
       color: #b04e2d;
@@ -537,7 +565,8 @@ body {
 #gate {
   position: fixed;
   inset: 0;
-  background: #f8f4ec;
+  
+  background: url('https://cdn.ultraswank.net/uploads/sterling-cooper-dryper-pryce_office_01-1000x750.jpg') center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -568,11 +597,12 @@ body {
   margin-top: 14px;
   padding: 10px 18px;
   font-weight: 700;
+  font-family: "Work Sans", sans-serif;
   border: 0;
   background: #c9a33b;
   color: #1b140b;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 1px;
   box-shadow: 0 4px 8px rgba(0,0,0,.1);
 }
 
@@ -582,17 +612,172 @@ body {
   font-size: 14px;
 }
 
+/* ===== FOLDER STACK COMPONENT ===== */
+
+.folder-stack {
+  background: #fffdf7;
+  border: 1px solid #e6decc;
+  border-radius: 4px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.15);
+  padding: 0;
+  overflow: hidden;
+  font-family: "Work Sans", sans-serif;
+}
+
+.folder-tabs {
+  display: flex;
+  background: #f3ebd8;
+  border-bottom: 1px solid #ddd2bd;
+}
+
+.folder-tab {
+  flex: 1;
+  padding: 12px 14px;
+  text-align: center;
+  background: #f3ebd8;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: .03em;
+  transition: background .2s ease;
+}
+
+.folder-tab.active {
+  background: #fffdf7;
+  border-bottom: 2px solid #c9a33b;
+}
+
+.folder-sheet {
+  display: none;
+  padding: 20px 24px;
+  animation: tabFade .25s ease;
+}
+
+.folder-sheet.active {
+  display: block;
+}
+
+@keyframes tabFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.folder-sheet h3 {
+  margin-top: 0;
+  font-family: "Libre Baskerville", serif;
+  color: #3a2f1c;
+}
+
+.folder-card {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 24px 22px;
+  box-shadow: var(--shadow);
+  margin-top: 40px; /* creates room for the tab */
+}
+
+/* the TAB itself */
+.folder-tab {
+  position: absolute;
+  top: -28px;
+  left: 0;
+  background: #fffdf7;
+  padding: 6px 14px;
+  border: 1px solid var(--line);
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  font-family: "Libre Baskerville", serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #6a604b;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.06);
+}
+
+/* === Split-Flap Countdown (Gate Style) === */
+.flip-container {
+  display: flex;
+  gap: 10px;
+  margin: 14px 0 18px;
+  justify-content: center;
+}
+
+.flip-unit {
+  text-align: center;
+}
+
+.flip-unit label {
+  display: block;
+  margin-top: 4px;
+  font-size: 50px;
+  letter-spacing: 0.08em;
+  color: #5c5243;
+  text-transform: uppercase;
+  font-family: "Work Sans", sans-serif;
+}
+
+.flip {
+  display: inline-block;
+  width: 90px;
+  height: 120px;
+  padding: 14px 0;
+  font-size: 50px;
+  background: #1a1a1a;
+  color: #f3e8c8;
+  border-radius: 4px;
+  font-family: "Libre Baskerville", serif;
+  box-shadow: inset 0 -4px 6px rgba(0,0,0,.3), 0 3px 10px rgba(0,0,0,.25);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.03em;
+}
+
+/* Divider line across each tile */
+.flip::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+}
+
+/* Mobile scaling */
+@media (max-width: 600px) {
+  .flip {
+    width: 42px;
+    font-size: 24px;
+    padding: 10px 0;
+  }
+  .flip-unit label {
+    font-size: 10px;
+  }
+}
 
   </style>
 </head>
 <body>
 <div id="gate">
   <div class="gate-inner">
-    <h2>Happy (Almost) New Year!</h2>
-    <p>Password is the DISCOVER KIRRIBILLI number on your invitation, with two 00s in front.</p>
-    <input id="guestCode" type="password" placeholder="###">
+
+    <img 
+      src="https://i.imgur.com/MVFuquL.png" 
+      alt="SC&P Logo" 
+      class="gate-logo"
+    />
+
+    <div id="countdownBoard" class="flip-container">
+      <div class="flip-unit"><span id="cd-days" class="flip">00</span><label>Days</label></div>
+    </div>
+    <p>enter your surname</p>
+    <input id="guestCode" type="password" placeholder="i.e. Draper">
     <button onclick="checkCode()">Enter</button>
     <p id="gateError"></p>
+
   </div>
 </div>
 
@@ -615,17 +800,29 @@ body {
 
         <aside>
           <div class="card">
-            <h2>Key Details</h2>
+            <h2>Details</h2>
             <ul class="list">
               <li><strong>Date:</strong> Wednesday, <em>31 December</em></li>
               <li><strong>Time:</strong> From <em>7:00 PM</em></li>
               <li><strong>Theme:</strong> <em>Mad Men</em> ('60s fashion)</li>
               <li><strong>Fireworks:</strong> <em>9:00 PM & 12:00 AM</em></li>
+              <li><strong>Address:</strong> <em>U12/19 Waruda Street</em></li>
+                <img 
+    src="https://i.imgur.com/IYKGwUo.jpeg" 
+    alt="Vintage 1934 Kirribilli subdivision map" 
+    style="
+      width: 100%;
+      height: auto;
+      border-radius: 1px;
+      border: 1px solid rgba(0,0,0,0.15);
+    "
+  >
             </ul>
           </div>
         </aside>
       </div>
     </section>
+</section>
 
     <!-- GRID -->
     <section class="grid">
@@ -637,14 +834,36 @@ body {
         style="--box-width: 400px; --box-height: 550px;"
       >
         <h2 id="r1">An Evening with SC&amp;P</h2>
-        <p>Sydney may not have the snowdrifts of New York, but don’t let the sunshine fool you. Nights by the water grow nippy, so the occasion calls for suits and ties, or fashionable clubwear.</p> 
+        <p>Sydney may not have the snowdrifts of New York, but don’t let the sunshine fool you. Nights by the water grow nippy, 
+            so the occasion calls for suits and ties, or fashionable clubwear.</p> 
         <p>Beatniks and hippies welcome, provided they don't arrive shoeless and bring the "good vibrations" with them.</p>
-        <p>For the ladies: as Abraham Lincoln once put it, "the higher the hair, the better the **luck** -- but the shorter the **dress**, the better the --" (he was cut-off mid-sentence by a waiter dropping a tray).</p>
+        <p>For the ladies: as Abraham Lincoln once put it, "the higher the hair, the better the **luck** -- but the shorter the 
+            **dress**, the better the --" (he was cut-off mid-sentence by a waiter dropping a tray).</p>
         <p>Please send your response by December 7.</p>
 
         <p>— <strong>R. STERLING</strong></p>
       </article>
 
+            <!-- Road Closures -->
+      <article 
+        class="card closures printable" 
+        aria-labelledby="r1"
+        style="--box-width: 400px; --box-height: 550px;"
+      >
+        <h2 id="r1">Closures</h2>
+        <p><strong>Bradfield Hwy.</strong> 4am, Dec 31</p> 
+        <p><strong>Cahill Expressway</strong> 4am, Dec 31</p>
+        <p><strong>Miller's Point / The Rocks</strong> 6am, Dec 31</p> 
+        <p><strong>Circular Quay W.</strong> 6am, Dec 31</p> 
+        <p><strong>Observatory Hill</strong> 8am, Dec 31</p> 
+        <p><strong>North CBD (Pitt, George)</strong> 12pm, Dec 31</p> 
+        <p><strong>Beulah St.</strong> 5pm, Dec 31</p> 
+        <p><strong>Most CBD roads</strong> 7pm, Dec 31</p> 
+        <p><strong>Kirribilli Ave.</strong> 5pm, Dec 31</p> 
+        <p><strong>Waruda St.</strong> 5pm, Dec 31</p> 
+        <p><strong>Harbour Bridge</strong> 11pm, Dec 31</p> 
+
+      </article>
       <!-- SCHEDULE: Accordion Style -->
       <article class="card" aria-labelledby="sched">
         <h2 id="sched">Schedule</h2>
@@ -655,15 +874,15 @@ body {
           </li>
           <li>
             <button class="toggle"><strong>8/00</strong> — SC&P Presents: Trivia</button>
-            <div class="details">The ultimate twentieth-century trivia, SC&P-style, courtesy of our in-house Creative team. Play in pairs. Winners receive a prize.</div>
+            <div class="details">Brush up on your twentieth-century knowledge, else you'll be shouting "Damn it; I know this!". Questions courtesy of our in-house Creative team. Winning pair receives a chocolate platypus and a dramatic celebration.</div>
           </li>
           <li>
             <button class="toggle"><strong>9/00</strong> — Fireworks and Champagne</button>
-            <div class="details">The first display.</div>
+            <div class="details">The first display, titled "Calling Country" - a celebration of Australian Aboriginal and Torres Strait Islander artists.</div>
           </li>
           <li>
             <button class="toggle"><strong>9/30</strong> — SC&P Presents: Poker</button>
-            <div class="details">$20 buy-in minimum.</div>
+            <div class="details">$20 buy-in minimum -- redeemed  An ATM can be found outside of Milson's Point station, though $3+ fees apply. Withdraw in advance, and remember -- regardless of the stakes -- always gamble responsibly.</div>
           </li>
           <li>
             <button class="toggle"><strong>11/45</strong> — SC&P’s Countdown</button>
@@ -675,11 +894,11 @@ body {
           </li>
           <li>
             <button class="toggle"><strong>12/15</strong> — SC&P Presents: Hershey's Buffet</button>
-            <div class="details">A dessert buffet for our guests, proudly sponsored by Hershey's.</div>
+            <div class="details">A decadent celebration of the new year sponsored by our friends at Hershey's.</div>
           </li>
           <li>
             <button class="toggle"><strong>1/00</strong> — Smoker’s Lounge</button>
-            <div class="details">Wind down with cigars and music while the streets clear.</div>
+            <div class="details">Wind down with cigars and vinyl while the streets clear.</div>
           </li>
         </ul>
       </article>
@@ -687,8 +906,9 @@ body {
       <!-- House Menu -->
       <article class="card menu-card" aria-labelledby="menu">
         <h2>Sunset Canapés (7:00-7:45)</h2>
-        <p><strong>Tiger Prawns</strong> — fresh on ice.</p>
-        <p><strong>Sydney Rock Oysters</strong> — fresh on ice.</p>
+        <p><strong>Tiger Prawns</strong> — freshly delivered on ice.</p>
+        <p><strong>Sydney Rock Oysters</strong> — freshly delivered on ice.</p>
+        <p><strong>Classic Pepperoni</strong> — from the local woodfire.</p>
         <p><strong>Seasonal Fruit</strong> — Kensington Pride mangoes, Australian cherries.</p>
 
         <h2>Vintage Canapés (8:30-9:00)</h2>  
@@ -697,48 +917,50 @@ body {
         <p><strong>Prosciutto-Wrapped Melon</strong> — honeydew and rockmelon.</p>        
         <p><strong>Chip ’n’ Dip</strong> —  California dip, Ruffles.</p>
         <h2>Fondue (10:00-10:30)</h2>
-        <p><strong>Cheese Fondue</strong> — with bread, fresh fruit and veggies.</p>        
+        <p><strong>Cheese Fondue</strong> — with bread, greens and croquettes.</p>        
         <p><strong>Orange Sherbet</strong> — with thyme.</p>
         <h2>Hershey's Dessert Buffet (12:15)</h2>
-
+        <p><strong>New York Cheesecake</strong> — with fresh berries.</p>
+        <p><strong>Boston Cream Donuts</strong> — an American classic filled with cream patissiere.</p>
+        <p><strong>Cherry Pie</strong> — classic American pie with whipped cream.</p>
+        <p><strong>Classic Jello</strong> — with whipped cream.</p>
+        <p><strong>Bon Bon Selection</strong> — chocolates from local boutiques.</p>
 
         <h2 id="menu">Bar</h2>
 
-        <p><strong>7–8 — Bloody Mary:</strong> tomato juice, vodka, lime, jalapeno vinegar.</p>
-        <p><strong>8–9 — Gimlet: </strong>gin, lime, sugar, finger lime pearls.</p>
-        <p><strong>9–10 — Vodka Martini: </strong>vodka, dry vermouth, olive and a twist.</p>
-        <p><strong>10–11 — Old-Fashioned: </strong>whiskey, bitters, sugar, burned orange peel.</p>
-        <p><strong>11–Midnight — Manhattan: </strong>whiskey, sweet vermouth, bitters.</p>
+        <p><strong>7pm — Tom Collins:</strong> gin, lemon, lime, sugar, soda water.</p>
+        <p><strong>8pm — Gimlet: </strong>gin, lime, sugar, finger lime pearls.</p>
+        <p><strong>9pm — Vodka Martini: </strong>vodka, dry vermouth, olive and a twist.</p>
+        <p><strong>10pm — Old-Fashioned: </strong>whiskey, bitters, sugar, burned orange peel.</p>
+        <p><strong>11pm — Manhattan: </strong>whiskey, sweet vermouth, bitters.</p>
         <p><strong>Beer: </strong>Heineken, "Albo" Pale Ale (Kirribilli Special).</p>
-        <p><strong>Non-Alcoholic: </strong>Coca-Cola, Shirley Temple, Perrier</p>
+        <p><strong>Non-Alcoholic: </strong>Coca-Cola, Shirley Temple, Bloody Mary, Perrier</p>
       </article>
 
-<!-- Color Swatch Panel -->
+
+<!-- Color Swatch -->
 <article class="card" aria-labelledby="palette">
   <h2 id="palette">SC&P Presents: Colors of the 60s</h2>
   <p>by Joan Harris</p>
   <h3>Mix your palette by choosing up to 4 colours.</h3>
 
-<h4>Early 60s</h4>
+<h4>1960-1963</h4>
 <div class="swatch-grid">
   <div class="swatch" style="--swatch:#eee8dd;"><span>Ceramic</span></div>  
   <div class="swatch" style="--swatch:#ddaecf;"><span>Rose</span></div> 
-  <div class="swatch" style="--swatch:#e90c3c;"><span>Cherry</span></div>   
   <div class="swatch" style="--swatch:#d58e5c;"><span>Tan</span></div>
   <div class="swatch" style="--swatch:#dfad8c;"><span>Peach</span></div>     
   <div class="swatch" style="--swatch:#f4eaac;"><span>Butter</span></div>   
   <div class="swatch" style="--swatch:#cad354;"><span>Chartreuse</span></div>
   <div class="swatch" style="--swatch:#a3bb9a;"><span>Jade</span></div>
   <div class="swatch" style="--swatch:#659155;"><span>Pine</span></div>
-  <div class="swatch" style="--swatch:#a4c1db;"><span>Robin's Egg</span></div> 
   <div class="swatch" style="--swatch:#88afc5;"><span>Cerulean</span></div>       
-  <div class="swatch" style="--swatch:#447FA6;"><span>Mustang</span></div>  
-  <div class="swatch" style="--swatch:#4f7188;"><span>Military Blue</span></div>
+  <div class="swatch" style="--swatch:#4f7d9b;"><span>Mustang</span></div>  
   <div class="swatch" style="--swatch:#6b7175;"><span>Military Grey</span></div>
   <div class="swatch" style="--swatch:#929292;"><span>Steel</span></div>  
 </div>
 
-<h4>Mid 60s</h4>
+<h4>1964-1967</h4>
 <div class="swatch-grid">
   <div class="swatch" style="--swatch:#f84a70;"><span>Hot Pink</span></div>  
   <div class="swatch" style="--swatch:#c31e1e;"><span>Crimson</span></div>
@@ -750,14 +972,14 @@ body {
   <div class="swatch" style="--swatch:#196e72;"><span>Teal</span></div>
   <div class="swatch" style="--swatch:#0ed1b7;"><span>Turquoise</span></div>
   <div class="swatch" style="--swatch:#0baee0;"><span>Sky Blue</span></div>
-  <div class="swatch" style="--swatch:#1c2c86;"><span>Navy</span></div>
+  <div class="swatch" style="--swatch:#1e2655;"><span>Navy</span></div>
   <div class="swatch" style="--swatch:#a775d2;"><span>Lavender</span></div>
   <div class="swatch" style="--swatch:#462e5c;"><span>Violet</span></div>
   <div class="swatch" style="--swatch:#381a06;"><span>Dark Walnut</span></div>
   <div class="swatch" style="--swatch:#2c2c2c;"><span>Charcoal</span></div>
 </div>
 
-<h4>Late 60s</h4>
+<h4>1968-1970</h4>
 <div class="swatch-grid">
   <div class="swatch" style="--swatch:#3a2032;"><span>Deep Wine</span></div>
   <div class="swatch" style="--swatch:#601300;"><span>Burned Mahogany</span></div>  
@@ -769,40 +991,33 @@ body {
   <div class="swatch" style="--swatch:#7a7930;"><span>Khaki</span></div>
   <div class="swatch" style="--swatch:#54a0c4;"><span>Sky Blue</span></div>  
 </div>
-
-
   <div id="palettePreview" class="palette-preview">
     <p class="placeholder">Your palette will appear here.</p>
   </div>
 </article>
 
-      <!-- Static Gallery placeholder container -->
-      <div id="gallery" class="gallery-grid" style="grid-column:1 / -1; margin-top:12px">
-        <!-- Shots appear here -->
-      </div>
-
       <!-- FAQ: Roger Sterling Edition (FULL-WIDTH) -->
       <article class="faq-card" aria-labelledby="faq">
-        <h2 id="faq">Question & Answers with Rod Sterling</h2>
+        <h2 id="faq">Q&A with Rod Sterling</h2>
         <ul class="faq-list">
           <li>
-            <button class="faq-toggle"><strong>Additional guests?</strong></button>
+            <button class="faq-toggle"><strong>More than +1?</strong></button>
             <div class="faq-details">You can bring 'em, but there's no guarantee security will let them in. However, should your plus one be of particular importance — say, an investor, a mistress, or someone who owns a yacht — I’m sure we can make the necessary adjustments.</div>
           </li>
           <li>
-            <button class="faq-toggle"><strong>What do we do when we arrive at a police checkpoint?</strong></button>
+            <button class="faq-toggle"><strong>What do we do when we arrive at a checkpoint?</strong></button>
             <div class="faq-details">There are workarounds, but generally police require proof of address. Apparently, being devastatingly charming still isn’t considered valid ID in Australia. Should you be unsuccessful in your schmoozing attempts; we'll collect you.</div>
           </li>
           <li>
-            <button class="faq-toggle"><strong>How do we get there?</strong></button>
-            <div class="faq-details">It depends on your distance and anticipated time of arrival. Trains will be running across the bridge until a certain time. Ferries to Kirribilli and Milson's Point will not run past 3pm. If you intend on bringing anything, bear in mind that you won't be within parking distance of a few streets if you *do* manage to park, closures are: *from 5pm* (Waruda, Kirribilli Ave. and surrounding streets), </div>
+            <button class="faq-toggle"><strong>What is the best way of getting there?</strong></button>
+            <div class="faq-details">It depends on distance and time of arrival. Trains will be running until a certain time. Ferries to Kirribilli and Milson's Point will not run past 3pm. There should be no delays with the Metro. If you intend on bringing anything, bear in mind that you likely won't be within parking distance. </div>
           </li>
           <li>
             <button class="faq-toggle"><strong>Dress code?</strong></button>
-            <div class="faq-details">Evening attire, of-the-era: linen suits, ties, facial hair. Alternatively, golf polos and cardigans. Hats are welcome (unless tragic). For the ladies: minis, high hair, and even higher standards.</div>
+            <div class="faq-details">Evening attire, of-the-era: linen suits, ties, facial hair. Alternatively, golf polos, cardigans, or a sunny "West Coast" look. Hats welcome (unless tragic). For the ladies: minis, high hair, and even higher standards.</div>
           </li>
           <li>
-            <button class="faq-toggle"><strong>If there's rain?</strong></button>
+            <button class="faq-toggle"><strong>Precipitation?</strong></button>
             <div class="faq-details">Covered, naturally. If the heavens open, we’ll relocate indoors — martinis travel well. The fireworks will be televised, and I assure you, they look just as expensive from the sofa.</div>
           </li>
         </ul>
@@ -915,22 +1130,109 @@ function updatePreview() {
 </script>
 
 <script>
-  // Replace with YOUR list of guest numbers:
-  const validCodes = ["001", "002", "003", "004", "005", "006", "007", "008", "009"];
+  // Password → Guest Name → Message
+  const guestData = {
+    "Alfonso": { name: "Alfonso",  msg: "Welcome, Tommy!" },
+    "Chambers": { name: "Chambers", msg: "Welcome, Tom!" },
+    "Carrizosa": { name: "Carrizosa", msg: "Welcome, Andres!" },
+    "Cheung": { name: "Cheung", msg: "Welcome, Fiona!" },
+    "Mutton": { name: "Mutton", msg: "Welcome, Family!" },
+    "Ferreira": { name: "Ferreira", msg: "Welcome, Larissa!" },
+    "Jones": { name: "Jones", msg: "Welcome, Sarah!" },
+    "Smout": { name: "Smout", msg: "Welcome, Smouty!" },
+    "Villar": { name: "Villar", msg: "Welcome, Ricky!" },
+    "Knezevic": { name: "Knezevic", msg: "Welcome, Snezza!" },
+    "Torresan": { name: "Torresan", msg: "Welcome, Dani!" }
+  };
 
   function checkCode() {
     const code = document.getElementById("guestCode").value.trim();
     const gate = document.getElementById("gate");
     const error = document.getElementById("gateError");
 
-    if (validCodes.includes(code)) {
-      gate.style.display = "none";     // 🎉 unlocks the page
+    if (guestData[code]) {
+      gate.style.display = "none";
+      showWelcomeMessage(guestData[code].msg);
     } else {
-      error.textContent = "Incorrect number. Please try again.";
+      error.textContent = "No guest registered to that name.";
     }
   }
+
+  function showWelcomeMessage(message) {
+    const banner = document.createElement("div");
+    banner.textContent = message;
+
+    banner.style.position = "fixed";
+    banner.style.top = "20px";
+    banner.style.left = "50%";
+    banner.style.transform = "translateX(-50%)";
+    banner.style.padding = "12px 22px";
+    banner.style.background = "#c9a33b";
+    banner.style.color = "#1b140b";
+    banner.style.fontFamily = "'Libre Baskerville', serif";
+    banner.style.fontSize = "18px";
+    banner.style.borderRadius = "4px";
+    banner.style.boxShadow = "0 6px 18px rgba(0,0,0,.25)";
+    banner.style.zIndex = "9999";
+    banner.style.opacity = "0";
+    banner.style.transition = "opacity .6s ease";
+
+    document.body.appendChild(banner);
+
+    requestAnimationFrame(() => { banner.style.opacity = "1"; });
+
+    setTimeout(() => {
+      banner.style.opacity = "0";
+      setTimeout(() => banner.remove(), 600);
+    }, 5000);
+  }
 </script>
+
+<script>
+document.querySelectorAll(".folder-tab").forEach(tab => {
+  tab.addEventListener("click", () => {
+    const target = tab.dataset.target;
+
+    document.querySelectorAll(".folder-tab").forEach(t => t.classList.remove("active"));
+    document.querySelectorAll(".folder-sheet").forEach(s => s.classList.remove("active"));
+
+    tab.classList.add("active");
+    document.getElementById(target).classList.add("active");
+  });
+});
+</script>
+
+<script>
+function updateCountdown() {
+  const eventDate = new Date("December 31, 2025").getTime();
+  const now = Date.now();
+  const diff = eventDate - now;
+
+  if (diff <= 0) {
+    document.getElementById("cd-days").textContent = "00";
+    document.getElementById("cd-hours").textContent = "00";
+    document.getElementById("cd-mins").textContent = "00";
+    document.getElementById("cd-secs").textContent = "00";
+    return;
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+  document.getElementById("cd-days").textContent = String(days).padStart(2, "0");
+  document.getElementById("cd-hours").textContent = String(hours).padStart(2, "0");
+  document.getElementById("cd-mins").textContent = String(mins).padStart(2, "0");
+  document.getElementById("cd-secs").textContent = String(secs).padStart(2, "0");
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
+
 
 </body>
 
 </html>
+
