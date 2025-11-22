@@ -563,6 +563,60 @@ body {
   }
 }
 
+/* ============================
+   MOBILE FIXES FOR LOGIN GATE
+   ============================ */
+@media (max-width: 600px) {
+
+  #gate .gate-inner {
+    width: 90%;
+    max-width: 360px;
+    padding: 22px 18px;
+    border-radius: 6px;
+  }
+
+  /* SC&P Logo */
+  #gate .gate-inner img {
+    max-width: 180px;
+  }
+
+  /* Flip number */
+  .flip-card {
+    transform: scale(0.75);
+    margin: 6px auto 0 auto;
+  }
+
+  /* DAYS label */
+  .countdown-label {
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    margin-top: 2px;
+  }
+
+  /* input + button */
+  #guestCode {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  #gate button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  /* type prompt */
+  .gate-inner h2, 
+  .gate-inner p {
+    font-size: 16px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+}
+
+
 /* ==========================
    RESPONSIVE GATE OVERLAY
    ========================== */
@@ -880,17 +934,17 @@ body {
         style="--box-width: 400px; --box-height: 550px;"
       >
         <h2 id="r1">Closures</h2>
-        <p><strong>Bradfield Hwy.</strong> 4am, Dec 31</p> 
-        <p><strong>Cahill Expressway</strong> 4am, Dec 31</p>
-        <p><strong>Miller's Point / The Rocks</strong> 6am, Dec 31</p> 
-        <p><strong>Circular Quay W.</strong> 6am, Dec 31</p> 
-        <p><strong>Observatory Hill</strong> 8am, Dec 31</p> 
-        <p><strong>North CBD (Pitt, George)</strong> 12pm, Dec 31</p> 
-        <p><strong>Beulah St.</strong> 5pm, Dec 31</p> 
-        <p><strong>Most CBD roads</strong> 7pm, Dec 31</p> 
-        <p><strong>Kirribilli Ave.</strong> 5pm, Dec 31</p> 
-        <p><strong>Waruda St.</strong> 5pm, Dec 31</p> 
-        <p><strong>Harbour Bridge</strong> 11pm, Dec 31</p> 
+        <p><strong>4am, Dec 31</strong> Bradfield Hwy.</p> 
+        <p><strong>4am Dec 31</strong> Cahill Expressway</p>
+        <p><strong>6am, Dec 31</strong> Miller's Point / The Rocks</p> 
+        <p><strong>6am, Dec 31</strong> Circular Quay W.</p> 
+        <p><strong>8am, Dec 31</strong> Observatory Hill </p> 
+        <p><strong>12pm, Dec 31</strong> North CBD (Pitt, George)</p> 
+        <p><strong>5pm, Dec 31</strong> Beulah St.</p> 
+        <p><strong>5pm, Dec 31</strong> Kirribilli Ave. </p> 
+        <p><strong>5pm, Dec 31</strong> Waruda St. </p> 
+        <p><strong>7pm, Dec 31</strong> Most CBD roads</p> 
+        <p><strong>11pm, Dec 31</strong> Harbour Bridge </p> 
 
       </article>
       <!-- SCHEDULE: Accordion Style -->
@@ -1265,4 +1319,3 @@ updateCountdown();
 </body>
 
 </html>
-
