@@ -10,7 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Work+Sans:wght@400;600;700&family=Special+Elite&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Michroma&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Parisienne&display=swap" rel="stylesheet">
 
   <style>
 
@@ -206,7 +208,8 @@ body {
     .card.closures{
       font-family:"Passion One", sans-serif;
       color:rgb(43, 21, 4);
-      font-size: 20px;
+      font-size: 16px;
+      line-height: 0.4;
       background-image: url('https://img.freepik.com/premium-photo/old-paper-texture-background_118047-12801.jpg');
       position:relative;
       /* size knobs (you can override inline via --box-width/--box-height) */
@@ -242,7 +245,7 @@ body {
     /* Footer */
     footer{margin:34px 0 60px; text-align:center; color:#877a60}
 
-    /* Cocktail & Canape Menu (retro style) */
+    /* COCKTAIL & FOOD MENU */
     .menu-card {
       font-family: "IBM Plex Sans Condensed", "Work Sans", sans-serif;
       letter-spacing: 0.02em;
@@ -267,16 +270,17 @@ body {
     .menu-card p { margin: 6px 0; font-size: 15px; }
     .menu-card p strong { color: var(--accent-2); font-weight: 600; }
 
-    /* ===== DIRECTORY BOARD LOOK (Schedule card) ===== */
+    /* ===== DIRECTORY BOARD ===== */
     article.card[aria-labelledby="sched"] {
       background-image: url("https://woollieandfeltie.co.uk/image/catalog/SHEET_FELT_WOOL_VISCOSE_MIX_TURQUOISE_1K.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       color: #fff;
-      font-family: "Libre Baskerville", monospace;
-      text-transform: lowercase;
-      letter-spacing: 0.1em;
+      font-family: "Abril Fatface", serif;
+      font-size: 16px;
+      text-transform: Capitalize;
+      letter-spacing: 0.05em;
       padding: 24px;
       border-radius: 4px;
     }
@@ -288,6 +292,7 @@ body {
       margin-bottom: 14px;
     }
     .schedule li {
+      list-style: none; 
       border-bottom: 1px solid rgb(255, 255, 255);
       padding: 6px 0 10px;
       margin-bottom: 4px;
@@ -299,8 +304,9 @@ body {
       width: 100%;
       color: #f1f5f3;
       font-weight: 500;
-      font-size: 15px;
+      font-size: 18px;
       line-height: 1.4;
+      margin: 0.4px;
       text-shadow: 0 1px 2px rgba(0,0,0,.5);
       transition: color .2s ease, transform .2s ease;
       position: relative;
@@ -326,51 +332,6 @@ body {
       font-family: var(--details-font, "Georgia", serif);
     }
     .schedule li.open .details { display: block; }
-
-    /* Retro Mad Men Access card (kept for future use) */
-    .card.access-madmen {
-      --madmen-bg: #f4efe5;           
-      --madmen-border: #b92e2e;       
-      --madmen-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      --madmen-width: 460px;
-      --madmen-height: auto;
-
-      width: var(--madmen-width);
-      height: var(--madmen-height);
-      background: var(--madmen-bg);
-      border: 3px solid var(--madmen-border);
-      border-radius: 4px;
-      padding: 1.8rem 2rem;
-      box-shadow: 4px 4px 0 #00000020;
-      font-family: var(--madmen-font);
-      color: #222;
-      position: relative;
-      overflow: hidden;
-    }
-    .card.access-madmen::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, transparent 80%, rgba(185,46,46,0.08));
-      pointer-events: none;
-    }
-    .card.access-madmen h2 {
-      margin-top: 0;
-      font-size: 1.4em;
-      letter-spacing: 0.05em;
-      color: var(--madmen-border);
-      text-transform: uppercase;
-      font-weight: 700;
-      border-bottom: 2px solid var(--madmen-border);
-      padding-bottom: 6px;
-      margin-bottom: 0.8rem;
-    }
-    .card.access-madmen .meta {
-      font-size: 0.95em;
-      line-height: 1.5;
-      letter-spacing: 0.03em;
-      color: #333;
-    }
 
     /* ===== FAQ ===== */
     .faq-card {
@@ -440,86 +401,7 @@ body {
     }
     .faq-list li.open .faq-details { display: block; }
 
-.swatch-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 50px); /* 3 or 4 per row depending on width */
-  gap: 1px; /* ← tighten spacing between columns and rows */
-  justify-content: start;
-  align-items: start;
-  margin-bottom: 5px; /* small separation between palette groups */
-}
 
-.swatch {
-  background: var(--swatch);
-  height: 60px;
-  width: 60px;
-  border-radius: 3px;
-  cursor: pointer;
-  position: relative;
-  transition: 
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    z-index 0.2s ease;
-}
-
-.swatch span {
-  position: absolute;
-  bottom: 5px;
-  left: 8px;
-  font-size: 10px;
-  font-family: 'Work Sans', sans-serif;
-  color: #fff;
-  text-shadow: 0 1px 2px rgba(0,0,0,.5);
-}
-
-/* 🎨 The “lift” on hover */
-.swatch:hover {
-  transform: translateY(-8px);        /* lifts the chip */
-  box-shadow: 0 10px 20px rgba(0,0,0,.25);
-  z-index: 5;   
-  text-shadow: 0 2px 4px rgba(0,0,0,.6);
-  color: #fffef8;                      /* makes sure it sits above others */
-}
-
-.palette-preview {
-  margin-top: 18px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  height: 70px;
-  display: flex;
-  overflow: hidden;
-  background: #f7f5ee;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Work Sans', sans-serif;
-  font-size: 14px;
-  letter-spacing: 0.05em;
-  color: #777;
-}
-
-.palette-preview div {
-  flex: 1;
-  height: 100%;
-}
-
-.placeholder {
-  text-align: center;
-  width: 100%;
-}
-
-.card h2 {
-  margin-bottom: 4px; /* closes gap between title + byline */
-}
-
-.card p {
-  margin-top: 0;
-  margin-bottom: 5px; /* subtle spacing before subtitle */
-}
-
-.card h3 {
-  margin-top: 0;
-  margin-bottom: 16px; /* slightly larger to separate from content */
-}
 
 /* =======================
    UNIVERSAL MOBILE SCALER
@@ -682,7 +564,7 @@ body {
   font-weight: 700;
   font-family: "Work Sans", sans-serif;
   border: 0;
-  background: #c9a33b;
+  background: url('https://www.thinmetalsales.com/wp-content/uploads/ThinMetalSales-234956-Brass-Stainless-Steel-blogbanner1.jpg') center center / cover repeat;
   color: #1b140b;
   cursor: pointer;
   border-radius: 1px;
@@ -856,9 +738,9 @@ body {
     <div id="countdownBoard" class="flip-container">
       <div class="flip-unit"><span id="cd-days" class="flip">00</span><label>Days</label></div>
     </div>
-    <p>enter your surname</p>
+    <p>Enter your surname to access the invitation card.</p>
     <input id="guestCode" type="password" placeholder="i.e. Draper">
-    <button onclick="checkCode()">Enter</button>
+    <button onclick="checkCode()">Verify</button>
     <p id="gateError"></p>
 
   </div>
@@ -953,35 +835,42 @@ body {
         <ul class="list schedule">
           <li>
             <button class="toggle"><strong>7/00</strong> — Sunset Drinks & Canapés</button>
-            <div class="details">Served on the harbour.</div>
+            <div class="details">Seafood and Tom Collins' served on the back patio by the harbour, with 
+              portraits and photographs taken on 35mm. Inside, tune in to our exclusive feed to BBC's December 31st "Top of the Pops" broadcast! </div>
           </li>
           <li>
             <button class="toggle"><strong>8/00</strong> — SC&P Presents: Trivia</button>
-            <div class="details">Brush up on your twentieth-century knowledge, else you'll be shouting "Damn it; I know this!". Questions courtesy of our in-house Creative team. Winning pair receives a chocolate platypus and a dramatic celebration.</div>
+            <div class="details">Played during the 31/12/69 ABC Evening News broadcast. Brush up on your 
+              twentieth-century knowledge; questions courtesy of our in-house Creative team. Play in pairs; 
+              winners receive a Koko Black chocolate platypus.</div>
           </li>
           <li>
             <button class="toggle"><strong>9/00</strong> — Fireworks and Champagne</button>
-            <div class="details">The first display, titled "Calling Country" - a celebration of Australian Aboriginal and Torres Strait Islander artists.</div>
+            <div class="details">The first display.</div>
           </li>
           <li>
             <button class="toggle"><strong>9/30</strong> — SC&P Presents: Poker</button>
-            <div class="details">$20 buy-in minimum -- redeemed  An ATM can be found outside of Milson's Point station, though $3+ fees apply. Withdraw in advance, and remember -- regardless of the stakes -- always gamble responsibly.</div>
+            <div class="details">Texas Hold 'Em ($20 cash buy-in) and NBC Radio's All Star Parade of Bands.</div>
           </li>
           <li>
-            <button class="toggle"><strong>11/45</strong> — SC&P’s Countdown</button>
-            <div class="details">The agency’s official countdown with broadcast feed and toast.</div>
+            <button class="toggle"><strong>11/00</strong> — NBC's countdown with Guy Lombardo</button>
+            <div class="details">Guy Lombardo's official countdown broadcast of the 1969 Times Square celebrations.</div>
           </li>
           <li>
             <button class="toggle"><strong>12/00</strong> — Midnight Fireworks</button>
-            <div class="details">Sydney’s main show — visible directly across the Harbour. Grab a spot on the patio, or watch the broadcast live from inside.</div>
+            <div class="details">Sydney’s main show. Grab a spot on the patio, or watch the broadcast 
+              live from inside.</div>
           </li>
           <li>
-            <button class="toggle"><strong>12/15</strong> — SC&P Presents: Hershey's Buffet</button>
-            <div class="details">A decadent celebration of the new year sponsored by our friends at Hershey's.</div>
+            <button class="toggle"><strong>12/15</strong> — SC&P Presents: The Hershey's Buffet</button>
+            <div class="details">A decadent celebration provided by our friends at Hershey's, with cakes, chocolates, 
+              pies and other petit fours during Jimi Hendrix LIVE at Fillmore East. Guests are welcome to provide contributions, 
+              namely: their favourite chocolate.
+             </div>
           </li>
           <li>
             <button class="toggle"><strong>1/00</strong> — Smoker’s Lounge</button>
-            <div class="details">Wind down with cigars and vinyl while the streets clear.</div>
+            <div class="details">The end of NBC Radio's broadcast. Cigars and music while the surrounding streets clear out.</div>
           </li>
         </ul>
       </article>
@@ -989,9 +878,9 @@ body {
       <!-- House Menu -->
       <article class="card menu-card" aria-labelledby="menu">
         <h2>Sunset Canapés (7:00-7:45)</h2>
-        <p><strong>Tiger Prawns</strong> — freshly delivered on ice.</p>
-        <p><strong>Sydney Rock Oysters</strong> — freshly delivered on ice.</p>
-        <p><strong>Classic Pepperoni</strong> — from the local woodfire.</p>
+        <p><strong>Tiger Prawns</strong> — delivered fresh on ice.</p>
+        <p><strong>Sydney Rock Oysters</strong> — delivered fresh on ice.</p>
+        <p><strong>Classic Pepperoni</strong> — from the local woodfire pizzeria.</p>
         <p><strong>Seasonal Fruit</strong> — Kensington Pride mangoes, Australian cherries.</p>
 
         <h2>Vintage Canapés (8:30-9:00)</h2>  
@@ -1000,13 +889,12 @@ body {
         <p><strong>Prosciutto-Wrapped Melon</strong> — honeydew and rockmelon.</p>        
         <p><strong>Chip ’n’ Dip</strong> —  California dip, Ruffles.</p>
         <h2>Fondue (10:00-10:30)</h2>
-        <p><strong>Cheese Fondue</strong> — with bread, greens and croquettes.</p>        
-        <p><strong>Orange Sherbet</strong> — with thyme.</p>
-        <h2>Hershey's Dessert Buffet (12:15)</h2>
+        <p><strong>Cheese Fondue</strong> — with greens and croquettes.</p>        
+        <p><strong>Orange Sherbet</strong> — palette cleanser with thyme.</p>
+        <h2>The Hershey's Buffet (12:15)</h2>
         <p><strong>New York Cheesecake</strong> — with fresh berries.</p>
         <p><strong>Boston Cream Donuts</strong> — an American classic filled with cream patissiere.</p>
         <p><strong>Cherry Pie</strong> — classic American pie with whipped cream.</p>
-        <p><strong>Classic Jello</strong> — with whipped cream.</p>
         <p><strong>Bon Bon Selection</strong> — chocolates from local boutiques.</p>
 
         <h2 id="menu">Bar</h2>
@@ -1016,96 +904,46 @@ body {
         <p><strong>9pm — Vodka Martini: </strong>vodka, dry vermouth, olive and a twist.</p>
         <p><strong>10pm — Old-Fashioned: </strong>whiskey, bitters, sugar, burned orange peel.</p>
         <p><strong>11pm — Manhattan: </strong>whiskey, sweet vermouth, bitters.</p>
-        <p><strong>Beer: </strong>Heineken, "Albo" Pale Ale (Kirribilli Special).</p>
+        <p><strong>Beer: </strong>Heineken, Willy the Boatman "Albo" Pale Ale (Kirribilli Special).</p>
         <p><strong>Non-Alcoholic: </strong>Coca-Cola, Shirley Temple, Bloody Mary, Perrier</p>
       </article>
 
       
-      <!-- FAQ: Roger Sterling Edition (FULL-WIDTH) -->
+      <!-- FAQ: Roger Sterling  -->
       <article class="faq-card" aria-labelledby="faq">
-        <h2 id="faq">Q&A with Rod Sterling</h2>
+        <h2 id="faq">Q&A with Roger Sterling</h2>
         <ul class="faq-list">
           <li>
             <button class="faq-toggle"><strong>More than +1?</strong></button>
-            <div class="faq-details">You can bring 'em, but there's no guarantee security will let them in. However, should your plus one be of particular importance — say, an investor, a mistress, or someone who owns a yacht — I’m sure we can make the necessary adjustments.</div>
+            <div class="faq-details">You can bring 'em, but there's no guarantee the doorman will let them in. However, should 
+              your plus one be of particular importance -- say, an investor, a mistress, or someone who owns a yacht; I’m sure 
+              we can make the necessary adjustments.</div>
           </li>
           <li>
-            <button class="faq-toggle"><strong>What do we do when we arrive at a checkpoint?</strong></button>
-            <div class="faq-details">There are workarounds, but generally police require proof of address. Apparently, being devastatingly charming still isn’t considered valid ID in Australia. Should you be unsuccessful in your schmoozing attempts; we'll collect you.</div>
+            <button class="faq-toggle"><strong>What happens when we arrive at a checkpoint?</strong></button>
+            <div class="faq-details">There are workarounds, but generally police require proof of address. Apparently, being 
+              devastatingly charming still isn’t considered valid ID in Australia. Should you be unsuccessful in your schmoozing 
+              attempts; we'll collect you.</div>
           </li>
           <li>
             <button class="faq-toggle"><strong>What is the best way of getting there?</strong></button>
-            <div class="faq-details">It depends on distance and time of arrival. Trains will be running until a certain time. Ferries to Kirribilli and Milson's Point will not run past 3pm. There should be no delays with the Metro. If you intend on bringing anything, bear in mind that you likely won't be within parking distance. </div>
+            <div class="faq-details">It depends on distance and time of arrival. Trains will be running until a certain time. 
+              Ferries to Kirribilli and Milson's Point will not run past 3pm. There should be no delays with the Metro. If you intend 
+              on bringing anything, bear in mind that you likely won't be within parking distance. </div>
           </li>
           <li>
             <button class="faq-toggle"><strong>Dress code?</strong></button>
-            <div class="faq-details">Evening attire, of-the-era: linen suits, ties, facial hair. Alternatively, golf polos, cardigans, or a sunny "West Coast" look. Hats welcome (unless tragic). For the ladies: minis, high hair, and even higher standards.</div>
+            <div class="faq-details">Refer to our SC&P 1969 Style Guide for more information.</div>
           </li>
           <li>
             <button class="faq-toggle"><strong>Precipitation?</strong></button>
-            <div class="faq-details">Covered, naturally. If the heavens open, we’ll relocate indoors — martinis travel well. The fireworks will be televised, and I assure you, they look just as expensive from the sofa.</div>
+            <div class="faq-details">A portion of the back patio is covered. It's advised to bring an umbrella; fireworks will only be cancelled 
+              in the event of extreme weather. The fireworks will be televised from the comfort of the apartment, and I assure you, they look just 
+              as expensive from the sofa.</div>
           </li>
         </ul>
       </article>
-
-
-<!-- Color Swatch -->
-<article class="card" aria-labelledby="palette">
-  <h2 id="palette">SC&P Presents: Colors of the 60s</h2>
-  <p>by Joan Harris</p>
-  <h3>Mix your palette by choosing up to 4 colours.</h3>
-
-<h4>1960-1963</h4>
-<div class="swatch-grid">
-  <div class="swatch" style="--swatch:#eee8dd;"><span>Ceramic</span></div>  
-  <div class="swatch" style="--swatch:#ddaecf;"><span>Rose</span></div> 
-  <div class="swatch" style="--swatch:#d58e5c;"><span>Tan</span></div>
-  <div class="swatch" style="--swatch:#dfad8c;"><span>Peach</span></div>     
-  <div class="swatch" style="--swatch:#f4eaac;"><span>Butter</span></div>   
-  <div class="swatch" style="--swatch:#cad354;"><span>Chartreuse</span></div>
-  <div class="swatch" style="--swatch:#a3bb9a;"><span>Jade</span></div>
-  <div class="swatch" style="--swatch:#659155;"><span>Pine</span></div>
-  <div class="swatch" style="--swatch:#88afc5;"><span>Cerulean</span></div>       
-  <div class="swatch" style="--swatch:#4f7d9b;"><span>Mustang</span></div>  
-  <div class="swatch" style="--swatch:#6b7175;"><span>Military Grey</span></div>
-  <div class="swatch" style="--swatch:#929292;"><span>Steel</span></div>  
-</div>
-
-<h4>1964-1967</h4>
-<div class="swatch-grid">
-  <div class="swatch" style="--swatch:#f84a70;"><span>Hot Pink</span></div>  
-  <div class="swatch" style="--swatch:#c31e1e;"><span>Crimson</span></div>
-  <div class="swatch" style="--swatch:#e5562b;"><span>Burned Orange</span></div>
-  <div class="swatch" style="--swatch:#f9931e;"><span>Tangerine</span></div>
-  <div class="swatch" style="--swatch:#ffbb00;"><span>Harvest Gold</span></div>
-  <div class="swatch" style="--swatch:#f1ea80;"><span>Lemon Curd</span></div>
-  <div class="swatch" style="--swatch:#9e9d46;"><span>Olive</span></div>
-  <div class="swatch" style="--swatch:#196e72;"><span>Teal</span></div>
-  <div class="swatch" style="--swatch:#0ed1b7;"><span>Turquoise</span></div>
-  <div class="swatch" style="--swatch:#0baee0;"><span>Sky Blue</span></div>
-  <div class="swatch" style="--swatch:#1e2655;"><span>Navy</span></div>
-  <div class="swatch" style="--swatch:#a775d2;"><span>Lavender</span></div>
-  <div class="swatch" style="--swatch:#462e5c;"><span>Violet</span></div>
-  <div class="swatch" style="--swatch:#381a06;"><span>Dark Walnut</span></div>
-  <div class="swatch" style="--swatch:#2c2c2c;"><span>Charcoal</span></div>
-</div>
-
-<h4>1968-1970</h4>
-<div class="swatch-grid">
-  <div class="swatch" style="--swatch:#3a2032;"><span>Deep Wine</span></div>
-  <div class="swatch" style="--swatch:#601300;"><span>Burned Mahogany</span></div>  
-  <div class="swatch" style="--swatch:#b04e2d;"><span>Vermilion</span></div>
-  <div class="swatch" style="--swatch:#be9e7e;"><span>Oatmeal</span></div>
-  <div class="swatch" style="--swatch:#ffe600;"><span>Canary</span></div>
-  <div class="swatch" style="--swatch:#c9a33b;"><span>Brass Gold</span></div>
-  <div class="swatch" style="--swatch:#caac00;"><span>Mustard</span></div>
-  <div class="swatch" style="--swatch:#7a7930;"><span>Khaki</span></div>
-  <div class="swatch" style="--swatch:#54a0c4;"><span>Sky Blue</span></div>  
-</div>
-  <div id="palettePreview" class="palette-preview">
-    <p class="placeholder">Your palette will appear here.</p>
-  </div>
-</article>
+      
   <script>
     /* ================= Accordion: Schedule ================= */
     document.querySelectorAll('.schedule .toggle').forEach(btn => {
@@ -1124,34 +962,6 @@ body {
       });
     });
 
-    /* ================= RSVP ================= */
-    function handleRSVP(e){
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const plus = document.getElementById('plus').value.trim();
-      const contact = document.getElementById('contact').value.trim();
-      const arrival = document.getElementById('arrival').value;
-      const notes = document.getElementById('notes').value.trim();
-      const to = 'cmarkinova@gmail.com'; // TODO: replace with your address or form endpoint
-      const subject = encodeURIComponent('NYE RSVP: '+name);
-      const body = encodeURIComponent(
-        `Name: ${name}\n+1: ${plus || '-'}\nMobile: ${contact}\nArrival: ${arrival}\nNotes: ${notes}`
-      );
-      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-      document.getElementById('rsvpStatus').textContent = 'Opening your email app… If nothing appears, copy the details and DM us!';
-    }
-
-    /* ================= GALLERY (image links) ================= */
-    const gallery = document.getElementById('gallery');
-    function addShot(){
-      const url = document.getElementById('imgUrl')?.value.trim();
-      if(!url) return;
-      const card = document.createElement('figure');
-      card.className = 'shot';
-      card.innerHTML = `<img alt="reference" src="${url}"><span>${new URL(url).hostname}</span>`;
-      gallery.prepend(card);
-      document.getElementById('imgUrl').value='';
-    }
   </script>
 
 <script>
@@ -1214,6 +1024,35 @@ function updatePreview() {
 </script>
 
 <script>
+let currentPage = 0;
+const pages = document.querySelectorAll(".book .page");
+const prevBtn = document.getElementById("prevPage");
+const nextBtn = document.getElementById("nextPage");
+
+function updateBook() {
+  pages.forEach((p, i) => {
+    p.classList.toggle("active", i === currentPage);
+  });
+
+  prevBtn.disabled = currentPage === 0;
+  nextBtn.disabled = currentPage === pages.length - 1;
+}
+
+prevBtn.onclick = () => {
+  if (currentPage > 0) currentPage--;
+  updateBook();
+};
+
+nextBtn.onclick = () => {
+  if (currentPage < pages.length - 1) currentPage++;
+  updateBook();
+};
+
+updateBook();
+</script>
+
+
+<script>
   // Password → Guest Name → Message
   const guestData = {
     "Alfonso": { name: "Alfonso",  msg: "Welcome, Tommy!" },
@@ -1226,7 +1065,8 @@ function updatePreview() {
     "Smout": { name: "Smout", msg: "Welcome, Smouty!" },
     "Villar": { name: "Villar", msg: "Welcome, Ricky!" },
     "Knezevic": { name: "Knezevic", msg: "Welcome, Snezza!" },
-    "Torresan": { name: "Torresan", msg: "Welcome, Dani!" }
+    "Torresan": { name: "Torresan", msg: "Welcome, Dani!" },
+    "1": { name: "1", msg: "Welcome, Cass!" }
   };
 
   function checkCode() {
