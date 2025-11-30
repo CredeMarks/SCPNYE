@@ -335,7 +335,7 @@ body {
     /* ===== FAQ ===== */
     .faq-card {
       grid-column: 1 / -1;              /* span the whole grid */
-      background: #e4e4e4;
+      background: url('https://i.imgur.com/WBRj4vv.png') center center / cover repeat;
       color: #1a1a1a;
       border: 2px solid #b04e2d;
       border-radius: 1px;
@@ -490,7 +490,7 @@ body {
 #gate {
   position: fixed;
   inset: 0;
-  background: url('https://cdn.ultraswank.net/uploads/sterling-cooper-dryper-pryce_office_01-1000x750.jpg')
+  background: url('https://media.vanityfair.com/photos/5547bc01db753b82389ce2be/master/pass/mad-men-peggy-sates.jpg')
     center center / cover no-repeat;
   display: flex;
   align-items: center;
@@ -500,7 +500,7 @@ body {
 }
 
 .gate-inner {
-  background: rgb(255, 255, 255);
+  background: url('https://i.imgur.com/WBRj4vv.png') center center / cover repeat;
   padding: clamp(1rem, 4vw, 2rem);  /* responsive padding */
   border-radius: 4px;
   border: 1px solid #ddd2bd;
@@ -568,64 +568,51 @@ body {
 .flip-container {
   display: flex;
   justify-content: center;
-  margin: 20px 0;
+  margin: 22px 0;
 }
 
 .flip-unit {
   text-align: center;
 }
 
+/* TRUE SOLARI TILE (single panel, vintage look) */
 .flip {
-  width: 130px;
-  height: 180px;
-  border-radius: 6px;
-  background: #0d0d0d;
-  color: #e0ded5;
-  font-family: "Major Mono Display", monospace;
-  font-size: 68px;
-  font-weight: 700;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: clamp(120px, 42vw, 180px);
+  height: clamp(150px, 52vw, 240px);
+
+  background: #111;
+  color: #f1e9d8;
+
+  font-family: "Major Mono Display", monospace !important;
+  font-weight: 400;
+  font-size: clamp(48px, 16vw, 110px);
+
+  border-radius: 10px;
   position: relative;
   overflow: hidden;
-  margin: 0 auto;
+  letter-spacing: -1px;
+
   box-shadow:
-    0 10px 22px rgba(0,0,0,0.45),
-    inset 0 -6px 12px rgba(0,0,0,0.7),
-    inset 0 6px 12px rgba(255,255,255,0.06);
+    inset 0 -4px 6px rgba(0,0,0,.4),
+    0 12px 32px rgba(0,0,0,.25);
 }
 
-/* Top half */
-.flip::before {
-  content: attr(data-val);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #111;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-
-/* Bottom half */
+/* Divider line */
 .flip::after {
-  content: attr(data-val);
+  content: "";
   position: absolute;
-  bottom: 0;
+  top: 50%;
   left: 0;
   right: 0;
-  height: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #0f0f0f;
-  border-top: 1px solid rgba(0,0,0,0.5);
+  height: 1px;
+  background: rgba(255,255,255,0.08);
 }
 
-/* Label */
+/* LABEL */
 .flip-unit label {
   margin-top: 10px;
   font-size: 48px;
@@ -635,24 +622,17 @@ body {
   text-transform: uppercase;
 }
 
-/* =================================
-      MOBILE BOOST — BIGGER, NICER
-   ================================= */
+/* MOBILE BOOSTER */
 @media (max-width: 600px) {
   .flip {
     width: 180px;
-    height: 240px;
-    font-size: 90px;
-    border-radius: 8px;
-    box-shadow:
-      0 14px 30px rgba(0,0,0,0.55),
-      inset 0 -8px 16px rgba(0,0,0,0.75),
-      inset 0 8px 16px rgba(255,255,255,0.05);
+    height: 220px;
+    font-size: 100px;
   }
 
   .flip-unit label {
-    font-size: 16px;
-    letter-spacing: 0.3em;
+    font-size: 11px;
+    letter-spacing: 0.25em;
   }
 }
 
