@@ -10,9 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Work+Sans:wght@400;600;700&family=Special+Elite&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Michroma&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Parisienne&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Major+Mono+Display&family=Michroma&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Parisienne&family=Unica+One&display=swap" rel="stylesheet">
 
   <style>
 
@@ -207,10 +207,10 @@ body {
     /* Closures */
     .card.closures{
       font-family:"Passion One", sans-serif;
-      color:rgb(43, 21, 4);
+      color:rgb(51, 49, 47);
       font-size: 16px;
       line-height: 0.7;
-      background-image: url('https://img.freepik.com/premium-photo/old-paper-texture-background_118047-12801.jpg');
+      background-image: url('https://img.freepik.com/free-photo/concrete-wall-textured-backgrounds-built-structure-concept_53876-14107.jpg');
       position:relative;
       /* size knobs (you can override inline via --box-width/--box-height) */
       width: var(--box-width, auto);
@@ -218,12 +218,11 @@ body {
       padding: 1.5rem;
       border: 1px solid #ccc;
       border-radius: 1px;
-      background: #f7eed8;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       overflow: auto;
     }
     .card.closures:before{
-      content:"S C & P  —  INTERNAL MEMO";
+      content:"NY TIMES";
       position:absolute; top:14px; right:16px;
       font:700 11px "Work Sans",system-ui; letter-spacing:.14em; color:#8a7c62;
     }
@@ -258,7 +257,7 @@ body {
       line-height: 1;
     }
     .menu-card h2 {
-      font-family: "Libre Baskerville", serif;
+      font-family: "Abril Fatface", serif;
       font-size: 20px;
       text-transform: uppercase;
       letter-spacing: 0.04em;
@@ -336,10 +335,8 @@ body {
     /* ===== FAQ ===== */
     .faq-card {
       grid-column: 1 / -1;              /* span the whole grid */
-      background-image: url('https://thegraphicsfairy.com/wp-content/uploads/2020/07/Blank-Patina-Paper-2-GraphicsFairy.jpg');
-      background-size: cover;
-      background-position: center;
-      color: #b04e2d;
+      background: #e4e4e4;
+      color: #1a1a1a;
       border: 2px solid #b04e2d;
       border-radius: 1px;
       padding: 36px 48px;
@@ -354,9 +351,9 @@ body {
       .faq-card{padding:24px 20px}
     }
     .faq-card h2 {
-      font-family: 'Libre Baskerville', serif;
-      color: #b04e2d; /* Title */
-      font-size: 25px;
+      font-family: 'Major Mono Display', monospace;
+      color: #1a1a1a; /* Title */
+      font-size: 45px;
       text-align: center;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -372,7 +369,7 @@ body {
       width: 100%;
       font-family: 'Work Sans', sans-serif;
       font-size: 20px;
-      color: #108494; /*FAQ box text*/
+      color: #1a1a1a; /*FAQ box text*/
       padding: 14px 0;
       border-bottom: 1px dashed rgba(141, 141, 141, 0.3);
       transition: color .3s ease, letter-spacing .2s ease;
@@ -389,7 +386,7 @@ body {
     .faq-details {
       display: none;
       color: #f4f1e3;
-      background: rgb(201, 92, 3);
+      background: rgb(23, 114, 114);
       border-left: 4px solid #e7c97c;
       border-radius: 1px;
       /* FIX: "IMB Plex Mono" -> "IBM Plex Mono" */
@@ -462,19 +459,6 @@ body {
     max-width: 180px;
   }
 
-  /* Flip number */
-  .flip-card {
-    transform: scale(0.75);
-    margin: 6px auto 0 auto;
-  }
-
-  /* DAYS label */
-  .countdown-label {
-    font-size: 12px;
-    letter-spacing: 0.22em;
-    margin-top: 2px;
-  }
-
   /* input + button */
   #guestCode {
     width: 100%;
@@ -516,7 +500,7 @@ body {
 }
 
 .gate-inner {
-  background: white;
+  background: rgb(255, 255, 255);
   padding: clamp(1rem, 4vw, 2rem);  /* responsive padding */
   border-radius: 4px;
   border: 1px solid #ddd2bd;
@@ -562,7 +546,7 @@ body {
   padding: clamp(0.5rem, 2vw, 0.75rem) clamp(0.9rem, 4vw, 1.4rem);
   font-size: clamp(13px, 4vw, 16px);
   font-weight: 700;
-  font-family: "Work Sans", sans-serif;
+  font-family: "Major Mono Display", monospace;
   border: 0;
   background: url('https://www.thinmetalsales.com/wp-content/uploads/ThinMetalSales-234956-Brass-Stainless-Steel-blogbanner1.jpg') center center / cover repeat;
   color: #1b140b;
@@ -577,151 +561,101 @@ body {
   font-size: clamp(12px, 3vw, 14px);
 }
 
-/* ===== FOLDER STACK COMPONENT ===== */
+/* ============================
+      SOLARI SPLIT-FLAP DISPLAY
+   ============================ */
 
-.folder-stack {
-  background: #fffdf7;
-  border: 1px solid #e6decc;
-  border-radius: 4px;
-  box-shadow: 0 8px 30px rgba(0,0,0,.15);
-  padding: 0;
-  overflow: hidden;
-  font-family: "Work Sans", sans-serif;
-}
-
-.folder-tabs {
-  display: flex;
-  background: #f3ebd8;
-  border-bottom: 1px solid #ddd2bd;
-}
-
-.folder-tab {
-  flex: 1;
-  padding: 12px 14px;
-  text-align: center;
-  background: #f3ebd8;
-  border: none;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  letter-spacing: .03em;
-  transition: background .2s ease;
-}
-
-.folder-tab.active {
-  background: #fffdf7;
-  border-bottom: 2px solid #c9a33b;
-}
-
-.folder-sheet {
-  display: none;
-  padding: 20px 24px;
-  animation: tabFade .25s ease;
-}
-
-.folder-sheet.active {
-  display: block;
-}
-
-@keyframes tabFade {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.folder-sheet h3 {
-  margin-top: 0;
-  font-family: "Libre Baskerville", serif;
-  color: #3a2f1c;
-}
-
-.folder-card {
-  position: relative;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  padding: 24px 22px;
-  box-shadow: var(--shadow);
-  margin-top: 40px; /* creates room for the tab */
-}
-
-/* the TAB itself */
-.folder-tab {
-  position: absolute;
-  top: -28px;
-  left: 0;
-  background: #fffdf7;
-  padding: 6px 14px;
-  border: 1px solid var(--line);
-  border-bottom: none;
-  border-radius: 4px 4px 0 0;
-  font-family: "Libre Baskerville", serif;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  color: #6a604b;
-  box-shadow: 0 -2px 6px rgba(0,0,0,0.06);
-}
-
-/* === Split-Flap Countdown (Gate Style) === */
 .flip-container {
   display: flex;
-  gap: 10px;
-  margin: 14px 0 18px;
   justify-content: center;
+  margin: 20px 0;
 }
 
 .flip-unit {
   text-align: center;
 }
 
-.flip-unit label {
-  display: block;
-  margin-top: 4px;
-  font-size: 50px;
-  letter-spacing: 0.08em;
-  color: #5c5243;
-  text-transform: uppercase;
-  font-family: "Work Sans", sans-serif;
-}
-
 .flip {
-  display: inline-block;
-  width: 110px;
-  height: 120px;
-  padding: 14px 0;
-  font-size: 50px;
-  background: #1a1a1a;
-  color: #f3e8c8;
-  border-radius: 4px;
-  font-family: "Libre Baskerville", serif;
-  box-shadow: inset 0 -4px 6px rgba(0,0,0,.3), 0 3px 10px rgba(0,0,0,.25);
+  width: 130px;
+  height: 180px;
+  border-radius: 6px;
+  background: #0d0d0d;
+  color: #e0ded5;
+  font-family: "Major Mono Display", monospace;
+  font-size: 68px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
   position: relative;
   overflow: hidden;
-  letter-spacing: 0.03em;
+  margin: 0 auto;
+  box-shadow:
+    0 10px 22px rgba(0,0,0,0.45),
+    inset 0 -6px 12px rgba(0,0,0,0.7),
+    inset 0 6px 12px rgba(255,255,255,0.06);
 }
 
-/* Divider line across each tile */
-.flip::after {
-  content: "";
+/* Top half */
+.flip::before {
+  content: attr(data-val);
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 0;
   right: 0;
-  height: 1px;
-  background: rgba(255,255,255,0.08);
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-/* Mobile scaling */
+/* Bottom half */
+.flip::after {
+  content: attr(data-val);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0f0f0f;
+  border-top: 1px solid rgba(0,0,0,0.5);
+}
+
+/* Label */
+.flip-unit label {
+  margin-top: 10px;
+  font-size: 48px;
+  letter-spacing: 0.22em;
+  font-family: "Major Mono Display", monospace;
+  color: #5c5243;
+  text-transform: uppercase;
+}
+
+/* =================================
+      MOBILE BOOST — BIGGER, NICER
+   ================================= */
 @media (max-width: 600px) {
   .flip {
-    width: 42px;
-    font-size: 24px;
-    padding: 10px 0;
+    width: 180px;
+    height: 240px;
+    font-size: 90px;
+    border-radius: 8px;
+    box-shadow:
+      0 14px 30px rgba(0,0,0,0.55),
+      inset 0 -8px 16px rgba(0,0,0,0.75),
+      inset 0 8px 16px rgba(255,255,255,0.05);
   }
+
   .flip-unit label {
-    font-size: 10px;
+    font-size: 16px;
+    letter-spacing: 0.3em;
   }
 }
+
 
   </style>
 </head>
@@ -736,7 +670,7 @@ body {
     />
 
     <div id="countdownBoard" class="flip-container">
-      <div class="flip-unit"><span id="cd-days" class="flip">00</span><label>Days</label></div>
+      <div class="flip-unit"><span id="cd-days" class="flip" data-val="00">00</span><label>Days</label></div>
     </div>
     <p>Enter your surname to access the invitation card.</p>
     <input id="guestCode" type="password" placeholder="i.e. Draper">
@@ -798,22 +732,106 @@ body {
         aria-labelledby="r1"
         style="--box-width: auto; --box-height: auto;"
       >
+      
         <h2 id="r1">An Evening with SC&amp;P</h2>
         <p>Dear Friends and Clients,</p>
-        <p>The time comes, yet again, to celebrate the end of a decade -- and what a turbulent decade it's been. In a mere 
-          ten years, we've seen the continuation of the Vietnam War, the assasination of a president, the death of icons, 
+        <p>The time comes, yet again, to celebrate the end of a decade -- and what a turbulent decade it's been. In a mere
+          ten years, we've witnessed the continuation of a tragic, polarising war, the assasination of political figures, the death of icons, 
           and the rise of civil rights and sexual liberation. And while it's tempting to look back on this decade cynically,
-          it's also important to look to the future with hope, in that good things will come of this world.
+          it's also important to look to the future with hope, in that good things will come of what's ahead.
         </p> 
         <p>Regardless, the occasion calls for a tropical reprieve: Sydney, Australia.</p>
-        <p>Sydney may not have the snowdrifts of New York, but don’t let the sunshine fool you. Nights by the water grow nippy, 
-            so the occasion calls for suits and ties, or fashionable clubwear.</p> 
-        <p>Beatniks and hippies welcome, provided they don't arrive shoeless and bring the "good vibrations" with them.</p>
+        <p>While Sydney may not have the snowdrifts of New York, don’t let the sunshine fool you, as nights by the water can grow nippy. 
+            The occasion calls for suits and ties, or fashionable clubwear: polos, sports jackets, cardigans.</p> 
+
         <p>For the ladies: as Abraham Lincoln once put it, "the higher the hair, the better the **luck** -- but the shorter the 
-            **dress**, the better the --" (he was cut-off mid-sentence by a waiter dropping a tray).</p>
-        <p>Please send your response by December 7.</p>
+            **dress**, the better the --" (he was cut-off mid-sentence by a waiter dropping a tray).</p>        
+        <p>Beatniks and hippies welcome, provided they bring the "good vibes" with them and don't arrive shoeless.</p>
+        <p>We require your response by December 7.</p>
 
         <p>-- R. STERLING</p>
+      </article>
+
+      <!-- SCHEDULE: Accordion Style -->
+      <article class="card" aria-labelledby="sched">
+        <h2 id="sched">Schedule</h2>
+        <ul class="list schedule">
+          <li>
+            <button class="toggle"><strong>7/00</strong> — Sunset Seafood & Drinks</button>
+            <div class="details">Seafood and Tom Collins' served on the back patio by the harbour. Inside, tune in to BBC's December 31st "Top of the Pops" broadcast, brought to you by our associate at Puttnam, Powell and Lowe.</div>
+          </li>
+          <li>
+            <button class="toggle"><strong>8/00</strong> — SC&P Presents: Trivia</button>
+            <div class="details">Played during the 31/12/69 ABC Evening News broadcast. Brush up on your 
+              twentieth-century knowledge; questions courtesy of our in-house Creative team. Play in pairs; 
+              winners receive a Koko Black chocolate platypus.</div>
+          </li>
+          <li>
+            <button class="toggle"><strong>9/00</strong> — Fireworks and Champagne</button>
+            <div class="details">The first display.</div>
+          </li>
+          <li>
+            <button class="toggle"><strong>9/30</strong> — SC&P Presents: Poker</button>
+            <div class="details">Texas Hold 'Em ($20 cash per buy-in). Minimum bet 50c. NBC Radio's All Star Parade of Bands.</div>
+          </li>
+          <li>
+            <button class="toggle"><strong>11/00</strong> — NBC Radio's countdown with Guy Lombardo</button>
+            <div class="details">Guy Lombardo's official countdown transmission of the 1969 Waldorf Astoria celebrations.</div>
+          </li>
+          <li>
+            <button class="toggle"><strong>12/00</strong> — Midnight Fireworks</button>
+            <div class="details">Sydney’s main show. Grab a spot on the patio, or watch the broadcast 
+              live from inside.</div>
+          </li>
+          <li>
+            <button class="toggle"><strong>12/15</strong> — SC&P Presents: Hershey's Buffet</button>
+            <div class="details">A decadent celebration provided by our friends at Hershey's, with cakes, chocolates, 
+              pies and other petit fours. Guests are welcome to provide contributions, 
+              namely: their favourite chocolate.
+             </div>
+          </li>
+          <li>
+            <button class="toggle"><strong>12/30</strong> — Smoker’s Lounge</button>
+            <div class="details">The end of NBC's broadcast. Cigars and music while the surrounding streets clear out.
+              Guests are welcome to stay until exhausted; though the optimal time for departure is before 2am. Public 
+              transport will be grossly congested for at least the first hour, as will rideshare services and roads.
+
+            </div>
+          </li>
+        </ul>
+      </article>
+
+      <!-- House Menu -->
+      <article class="card menu-card" aria-labelledby="menu">
+        <h2>Sunset Canapés (7:00-7:45)</h2>
+        <p><strong  style= color:#49254b;>Tiger Prawns</strong> — delivered fresh on ice.</p>
+        <p><strong  style= color:#49254b;>Sydney Rock Oysters</strong> — delivered fresh on ice.</p>
+        <p><strong  style= color:#49254b;>Classic Pepperoni</strong> — from the local woodfire pizzeria.</p>
+        <p><strong  style= color:#49254b;>Seasonal Fruit</strong> — Roadside mangoes, premium cherries.</p>
+
+        <h2>Vintage Canapés (8:30-9:00)</h2>  
+        <p><strong>Prawn Cocktails</strong> — vintage-style with cocktail sauce.</p>
+        <p><strong>Deviled Eggs</strong> — vintage-style, with smoked paprika and parsley.</p>
+        <p><strong>Prosciutto-Wrapped Melon</strong> — honeydew and rockmelon.</p>        
+        <p><strong>Chip ’n’ Dip</strong> —  California dip, Ruffles.</p>
+        <h2>Fondue (10:00-10:30)</h2>
+        <p><strong style= color:#d4a31a;>Cheese Fondue</strong> — with bread, croquettes and fresh produce.</p>        
+        <p><strong style= color:#d4a31a;>Orange Sherbet</strong> — palette cleanser with thyme.</p>
+        <h2>The Hershey's Buffet (12:15)</h2>
+        <p><strong  style= color:#5a3402;>New York Cheesecake</strong> — with fresh berries.</p>
+        <p><strong  style= color:#5a3402;>Boston Cream Donuts</strong> — an American classic filled with custard.</p>
+        <p><strong  style= color:#5a3402;>Cherry Pie</strong> — classic American pie with whipped cream.</p>
+        <p><strong  style= color:#5a3402;>Bon Bon Selection</strong> — chocolates from local boutiques.</p>
+
+        <h2 id="menu">Bar</h2>
+        <p><strong style= color:#0c7477;>7pm — Tom Collins:</strong> gin, lemon, sugar, soda water.</p>
+        <p><strong style= color:#0c7477;>8pm — Gimlet: </strong>gin, lime, sugar, finger lime pearls.</p>
+        <p><strong style= color:#0c7477;>9pm — Vodka Martini: </strong>vodka, dry vermouth, olive and a twist.</p>
+        <p><strong style= color:#0c7477;>10pm — Old-Fashioned: </strong>whiskey, bitters, sugar, burned orange peel.</p>
+        <p><strong style= color:#0c7477;>11pm — Manhattan: </strong>whiskey, sweet vermouth, bitters.</p>
+        <p><strong style= color:#0c7477;>Beer: </strong>Heineken, "Albo" Pale Ale (Kirribilli Special).</p>
+        <p><strong style= color:#0c7477;>Non-Alcoholic: </strong>Coca-Cola, Perrier</p>
+        <p><strong style= color:#0c7477;>Self-serve: </strong>Kool-Aid, Bloody Mary</p>
       </article>
 
             <!-- Road Closures -->
@@ -835,105 +853,36 @@ body {
         <p><strong>7pm, Dec 31</strong> Most CBD roads</br> 
         <p><strong>11pm, Dec 31</strong> Harbour Bridge </br> 
         <h2 id="r1">Transport Closures</h2>
-        <p><strong>3pm-midnight</strong> Ferries to Milson's Point, Kirribilli, McMahon's Point and North Sydney.</p> 
+        <p><strong>3pm-midnight</strong> Ferries to Milson's Point, Kirribilli and McMahon's Point.</p> 
         <p><strong>3pm-midnight</strong> Trains will not stop at Circulay Quay.</p>
         <p><strong>6pm-midnight</strong> Trains from the city will NOT stop at Milson's Point.</p> 
         <p><strong>open all night</strong> All Metro stations, including Victoria Cross (North Sydney).</p> 
 
       </article>
-      <!-- SCHEDULE: Accordion Style -->
-      <article class="card" aria-labelledby="sched">
-        <h2 id="sched">Schedule</h2>
-        <ul class="list schedule">
-          <li>
-            <button class="toggle"><strong>7/00</strong> — Sunset Drinks & Canapés</button>
-            <div class="details">Seafood and Tom Collins' served on the back patio by the harbour, with 
-              portraits and photographs taken on 35mm. Inside, tune in to our exclusive feed to BBC's December 31st "Top of the Pops" broadcast! </div>
-          </li>
-          <li>
-            <button class="toggle"><strong>8/00</strong> — SC&P Presents: Trivia</button>
-            <div class="details">Played during the 31/12/69 ABC Evening News broadcast. Brush up on your 
-              twentieth-century knowledge; questions courtesy of our in-house Creative team. Play in pairs; 
-              winners receive a Koko Black chocolate platypus.</div>
-          </li>
-          <li>
-            <button class="toggle"><strong>9/00</strong> — Fireworks and Champagne</button>
-            <div class="details">The first display.</div>
-          </li>
-          <li>
-            <button class="toggle"><strong>9/30</strong> — SC&P Presents: Poker</button>
-            <div class="details">Texas Hold 'Em ($20 cash buy-in) and NBC Radio's All Star Parade of Bands.</div>
-          </li>
-          <li>
-            <button class="toggle"><strong>11/00</strong> — NBC's countdown with Guy Lombardo</button>
-            <div class="details">Guy Lombardo's official countdown broadcast of the 1969 Times Square celebrations.</div>
-          </li>
-          <li>
-            <button class="toggle"><strong>12/00</strong> — Midnight Fireworks</button>
-            <div class="details">Sydney’s main show. Grab a spot on the patio, or watch the broadcast 
-              live from inside.</div>
-          </li>
-          <li>
-            <button class="toggle"><strong>12/15</strong> — SC&P Presents: The Hershey's Buffet</button>
-            <div class="details">A decadent celebration provided by our friends at Hershey's, with cakes, chocolates, 
-              pies and other petit fours during Jimi Hendrix LIVE at Fillmore East. Guests are welcome to provide contributions, 
-              namely: their favourite chocolate.
-             </div>
-          </li>
-          <li>
-            <button class="toggle"><strong>12/30</strong> — Smoker’s Lounge</button>
-            <div class="details">The end of NBC's broadcast. Cigars and music while the surrounding streets clear out.
-              Guests are welcome to stay until exhausted; though the optimal time for departure is before 2am. Public 
-              transport will be grossly congested for at least the first hour, as will rideshare services and roads.
-
-            </div>
-          </li>
-        </ul>
-      </article>
-
-      <!-- House Menu -->
-      <article class="card menu-card" aria-labelledby="menu">
-        <h2>Sunset Canapés (7:00-7:45)</h2>
-        <p><strong>Tiger Prawns</strong> — delivered fresh on ice.</p>
-        <p><strong>Sydney Rock Oysters</strong> — delivered fresh on ice.</p>
-        <p><strong>Classic Pepperoni</strong> — from the local woodfire pizzeria.</p>
-        <p><strong>Seasonal Fruit</strong> — Kensington Pride mangoes, Australian cherries.</p>
-
-        <h2>Vintage Canapés (8:30-9:00)</h2>  
-        <p><strong>Prawn Cocktails</strong> — vintage-style with cocktail sauce.</p>
-        <p><strong>Deviled Eggs</strong> — vintage-style, with smoked paprika and parsley.</p>
-        <p><strong>Prosciutto-Wrapped Melon</strong> — honeydew and rockmelon.</p>        
-        <p><strong>Chip ’n’ Dip</strong> —  California dip, Ruffles.</p>
-        <h2>Fondue (10:00-10:30)</h2>
-        <p><strong>Cheese Fondue</strong> — with greens and croquettes.</p>        
-        <p><strong>Orange Sherbet</strong> — palette cleanser with thyme.</p>
-        <h2>The Hershey's Buffet (12:15)</h2>
-        <p><strong>New York Cheesecake</strong> — with fresh berries.</p>
-        <p><strong>Boston Cream Donuts</strong> — an American classic filled with cream patissiere.</p>
-        <p><strong>Cherry Pie</strong> — classic American pie with whipped cream.</p>
-        <p><strong>Bon Bon Selection</strong> — chocolates from local boutiques.</p>
-
-        <h2 id="menu">Bar</h2>
-
-        <p><strong>7pm — Tom Collins:</strong> gin, lemon, lime, sugar, soda water.</p>
-        <p><strong>8pm — Gimlet: </strong>gin, lime, sugar, finger lime pearls.</p>
-        <p><strong>9pm — Vodka Martini: </strong>vodka, dry vermouth, olive and a twist.</p>
-        <p><strong>10pm — Old-Fashioned: </strong>whiskey, bitters, sugar, burned orange peel.</p>
-        <p><strong>11pm — Manhattan: </strong>whiskey, sweet vermouth, bitters.</p>
-        <p><strong>Beer: </strong>Heineken, Willy the Boatman "Albo" Pale Ale (Kirribilli Special).</p>
-        <p><strong>Non-Alcoholic: </strong>Coca-Cola, Shirley Temple, Bloody Mary, Perrier</p>
-      </article>
-
-      
+    
       <!-- FAQ: Roger Sterling  -->
       <article class="faq-card" aria-labelledby="faq">
         <h2 id="faq">Q&A with Roger Sterling</h2>
         <ul class="faq-list">
           <li>
+            <button class="faq-toggle"><strong>How many guests are coming?</strong></button>
+            <div class="faq-details">A tightly-knit group of ten guests, plus their additionals. Depending on the nature of security on the night, we *could* accomodate
+              a couple more, though we would also like to be fair to the neighbours in claiming a spot on the back patio at midnight. Beulah Street Reserve & Wharf are
+              optimal locations for the fireworks, and are less than thirty metres from the complex.</div>
+          </li>
+          <li>
             <button class="faq-toggle"><strong>More than +1?</strong></button>
-            <div class="faq-details">You can bring 'em, but there's no guarantee the doorman will let them in. However, should 
+            <div class="faq-details">We have a "the more, the merrier" policy, but there's no guarantee the doorman will let them in. However, should 
               your plus one be of particular importance -- say, an investor, a mistress, or someone who owns a yacht; I’m sure 
               we can make the necessary adjustments.</div>
+          </li>
+          <li>
+            <button class="faq-toggle"><strong>What do we bring?</strong></button>
+            <div class="faq-details">Officially, nothing but your spectacular selves. That said, we acknowledge your generosity,
+              and wouldn't want to deprive you of a thoughtful contribution. You're welcome to bring beer, fresh produce and dishes. 
+              You can also bring your favourite chocolate and 40s-60s vinyl. We're open to all forms of music. If you're planning to 
+              play poker, you'll need at least $20 cash for your first buy-in.
+            </div>
           </li>
           <li>
             <button class="faq-toggle"><strong>What happens when we arrive at a checkpoint?</strong></button>
@@ -948,17 +897,19 @@ body {
               on bringing anything, bear in mind that you likely won't be within parking distance. </div>
           </li>
           <li>
-            <button class="faq-toggle"><strong>Dress code?</strong></button>
-            <div class="faq-details">Refer to our SC&P 1969 Style Guide for more information.</div>
+            <button class="faq-toggle"><strong>Do we have to dress to the nines?</strong></button>
+            <div class="faq-details">No. Era-appropriate attire of any cast will do. Refer to our SC&P 1969 Style Guide for more information.</div>
           </li>
           <li>
             <button class="faq-toggle"><strong>Precipitation?</strong></button>
-            <div class="faq-details">A portion of the back patio is covered. It's advised to bring an umbrella; fireworks will only be cancelled 
+            <div class="faq-details">A portion of the back patio is covered. Bring an umbrella; fireworks will only be cancelled 
               in the event of extreme weather. The fireworks will be televised from the comfort of the apartment, and I assure you, they look just 
               as expensive from the sofa.</div>
           </li>
         </ul>
       </article>
+
+
       
   <script>
     /* ================= Accordion: Schedule ================= */
@@ -1073,15 +1024,16 @@ updateBook();
   const guestData = {
     "Alfonso": { name: "Alfonso",  msg: "Welcome, Tommy!" },
     "Chambers": { name: "Chambers", msg: "Welcome, Tom!" },
-    "Carrizosa": { name: "Carrizosa", msg: "Welcome, Andres!" },
+    "Carrizosa": { name: "Carrizosa", msg: "Welcome, Andrés!" },
     "Cheung": { name: "Cheung", msg: "Welcome, Fiona!" },
-    "Mutton": { name: "Mutton", msg: "Welcome, Family!" },
+    "Mutton": { name: "Mutton", msg: "Welcome, Mum & Dad!" },
     "Ferreira": { name: "Ferreira", msg: "Welcome, Larissa!" },
     "Jones": { name: "Jones", msg: "Welcome, Sarah!" },
     "Smout": { name: "Smout", msg: "Welcome, Smouty!" },
     "Villar": { name: "Villar", msg: "Welcome, Ricky!" },
-    "Knezevic": { name: "Knezevic", msg: "Welcome, Snezza!" },
+    "Knezevic": { name: "Knezevic", msg: "Welcome, Snez!" },
     "Torresan": { name: "Torresan", msg: "Welcome, Dani!" },
+    "Gaitan": { name: "Gaitan", msg: "Welcome, Arturo!" },
     "1": { name: "1", msg: "Welcome, Cass!" }
   };
 
@@ -1162,6 +1114,7 @@ function updateCountdown() {
   const secs = Math.floor((diff % (1000 * 60)) / 1000);
 
   document.getElementById("cd-days").textContent = String(days).padStart(2, "0");
+  document.getElementById("cd-days").setAttribute("data-val", String(days).padStart(2, "0"));
   document.getElementById("cd-hours").textContent = String(hours).padStart(2, "0");
   document.getElementById("cd-mins").textContent = String(mins).padStart(2, "0");
   document.getElementById("cd-secs").textContent = String(secs).padStart(2, "0");
