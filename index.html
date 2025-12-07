@@ -16,6 +16,21 @@
 
   <style>
 
+    #checkInBtn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 10px;
+  border: 0;
+  border-radius: 3px;
+  cursor: not-allowed;
+
+  background: #b8b8b8;
+  color: #555;
+  opacity: 0.7;
+}
+
     :root{
       /* Late-60s cocktail palette */
       --ink:#111013;
@@ -41,8 +56,9 @@
 
     a{color:#0e5b7a;text-decoration:underline;text-underline-offset:2px}
     .wrap{max-width:1120px;margin:0 auto;padding:24px}
+
 /* =====================
-   HEADER / HERO (clean)
+   HEADER / HERO
    ===================== */
 
 .hero {
@@ -99,7 +115,6 @@ h1 {
   font-size: clamp(16px, 1.6vw, 20px);
   color: #a8501d;
 }
-
 
 /* =====================
    RESPONSIVE BEHAVIOUR
@@ -227,20 +242,6 @@ body {
       font:700 11px "Work Sans",system-ui; letter-spacing:.14em; color:#8a7c62;
     }
 
-
-    /* Gallery (image links) */
-    .gallery-grid{
-      display:grid; grid-template-columns:repeat(12,1fr); gap:12px;
-    }
-    .shot{
-      grid-column:span 4; aspect-ratio:4/3; background:#eee; border-radius:1px; overflow:hidden; border:1px solid var(--line); position:relative
-    }
-    /* FIX: images were at 50%/50% — now they fill the frame properly */
-    .shot img{width:100%; height:100%; object-fit:cover; display:block}
-    .shot span{position:absolute; inset:auto 8px 8px 8px; background:rgba(255,255,255,.82); padding:6px 8px; border-radius:8px; font-size:12px}
-    @media (max-width:980px){.shot{grid-column:span 6}} 
-    @media (max-width:620px){.shot{grid-column:span 12}}
-
     /* Footer */
     footer{margin:34px 0 60px; text-align:center; color:#877a60}
 
@@ -248,12 +249,12 @@ body {
     .menu-card {
       font-family: "IBM Plex Sans Condensed", "Work Sans", sans-serif;
       letter-spacing: 0.02em;
-      background: var(--card);
+      background: url('https://i.imgur.com/WSQWV7F.png') center center / cover repeat;
       border: 1px solid var(--line);
       border-radius: 2px;
       padding: 22px;
       box-shadow: var(--shadow);
-      color: #2e261b;
+      color: #e2d7c8;
       line-height: 1;
     }
     .menu-card h2 {
@@ -386,7 +387,7 @@ body {
     .faq-details {
       display: none;
       color: #f4f1e3;
-      background: rgb(23, 114, 114);
+      background: rgb(26, 102, 116);
       border-left: 4px solid #e7c97c;
       border-radius: 1px;
       /* FIX: "IMB Plex Mono" -> "IBM Plex Mono" */
@@ -397,91 +398,6 @@ body {
       margin: 8px 0 18px;
     }
     .faq-list li.open .faq-details { display: block; }
-
-
-
-/* =======================
-   UNIVERSAL MOBILE SCALER
-   ======================= */
-@media (max-width: 600px) {
-
-  body {
-    font-size: 15px; /* overall scale down */
-  }
-
-  .wrap {
-    padding: 12px; /* tighter outer padding */
-  }
-
-  .grid {
-    gap: 14px; /* smaller spacing between cards */
-  }
-
-  .card {
-    padding: 16px; /* softer card padding */
-  }
-
-  .hero {
-    padding: 16px;
-  }
-
-  h1 {
-    font-size: 30px !important; /* scaled headline */
-  }
-
-  .strap {
-    font-size: 14px !important;
-  }
-
-  .faq-card {
-    padding: 20px;
-  }
-
-  .menu-card {
-    padding: 16px;
-  }
-}
-
-/* ============================
-   MOBILE FIXES FOR LOGIN GATE
-   ============================ */
-@media (max-width: 600px) {
-
-  #gate .gate-inner {
-    width: 90%;
-    max-width: 360px;
-    padding: 22px 18px;
-    border-radius: 6px;
-  }
-
-  /* SC&P Logo */
-  #gate .gate-inner img {
-    max-width: 180px;
-  }
-
-  /* input + button */
-  #guestCode {
-    width: 100%;
-    font-size: 16px;
-    padding: 10px;
-  }
-
-  #gate button {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    margin-top: 10px;
-  }
-
-  /* type prompt */
-  .gate-inner h2, 
-  .gate-inner p {
-    font-size: 16px;
-    margin-top: 6px;
-    margin-bottom: 6px;
-  }
-}
-
 
 /* ==========================
    RESPONSIVE GATE OVERLAY
@@ -591,7 +507,7 @@ body {
   font-weight: 400;
   font-size: clamp(48px, 16vw, 110px);
 
-  border-radius: 10px;
+  border-radius: 3px;
   position: relative;
   overflow: hidden;
   letter-spacing: -1px;
@@ -622,21 +538,6 @@ body {
   text-transform: uppercase;
 }
 
-/* MOBILE BOOSTER */
-@media (max-width: 600px) {
-  .flip {
-    width: 180px;
-    height: 220px;
-    font-size: 100px;
-  }
-
-  .flip-unit label {
-    font-size: 30px;
-    letter-spacing: 0.25em;
-  }
-}
-
-
   </style>
 </head>
 <body>
@@ -653,9 +554,12 @@ body {
       <div class="flip-unit"><span id="cd-days" class="flip" data-val="00">00</span><label>Days</label></div>
     </div>
     <p>Enter your surname to access the invitation card.</p>
-    <input id="guestCode" type="password" placeholder="i.e. Draper">
+    <input id="guestCode" type="password" placeholder="Guest Name">
     <button onclick="checkCode()">Verify</button>
     <p id="gateError"></p>
+
+    <button id="checkInBtn" disabled>Check In</button>
+<p id="checkInNote" style="margin-top:6px;"></p>
 
   </div>
 </div>
@@ -679,16 +583,15 @@ body {
 
         <aside>
           <div class="card">
-            <h2>Details</h2>
             <ul class="list">
-              <li><strong>Date:</strong> Wednesday, <em>31 December</em></li>
-              <li><strong>Time:</strong> From <em>7:00 PM</em></li>
-              <li><strong>Theme:</strong> <em>Mad Men</em> ('60s fashion)</li>
-              <li><strong>Fireworks:</strong> <em>9:00 PM & 12:00 AM</em></li>
-              <li><strong>Address:</strong> <em>U12/19 Waruda Street</em></li>
+              <li><strong>Date</strong> Wednesday, <em>31 December</em></li>
+              <li><strong>Time</strong> From <em>7:00 PM</em></li>
+              <li><strong>Theme</strong> <em>Mad Men: 1969</em></li>
+              <li><strong>Fireworks</strong> <em>9:00 PM & 12:00 AM</em></li>
+              <li><strong>Address</strong> <em>U12/19 Waruda Street</em></li>
                 <img 
     src="https://i.imgur.com/IYKGwUo.jpeg" 
-    alt="Vintage 1934 Kirribilli subdivision map" 
+    alt="Vintage Kirribilli Subdivision Map" 
     style="
       width: 100%;
       height: auto;
@@ -700,7 +603,6 @@ body {
           </div>
         </aside>
       </div>
-    </section>
 </section>
 
     <!-- GRID -->
@@ -715,18 +617,18 @@ body {
       
         <h2 id="r1">An Evening with SC&amp;P</h2>
         <p>Dear Friends and Clients,</p>
-        <p>The time comes, yet again, to acknowledge the end of another year -- and what a year it's been. We've witnessed the continuation of a tragic war, 
-          the assasination of political figures, the death of cultural icons, and the rise of civil unrest. And while it's tempting to look back cynically,
-          it's also important to look to the future with hope.
+        <p>The time comes to acknowledge another year -- and what a year it's been: the continuation of war, 
+          assasination, death, and the rise of civil unrest. But while it's tempting to reflect upon these times
+          with cynicism, it's also important to look to the future with hope.
         </p> 
-        <p>So, instead of facing our nation's problems, I say we turn a blind eye to them in sunny Sydney, Australia.</p>
+        <p>So, rather than facing our nation's problems, I say we turn a blind eye  in sunny Sydney, Australia.</p>
         <p>While Sydney may not have the snowdrifts of New York, don’t let the sunshine fool you: nights by the water can grow nippy. 
             The occasion calls for fashionable clubwear: polos, sports jackets, cardigans, or whatever makes you feel attractive.</p> 
 
         <p>For the ladies: as Abraham Lincoln once put it, "the higher the hair, the better the **luck** -- but the shorter the 
             **dress**, the better the --" (he was cut-off mid-sentence by a waiter dropping a tray).</p>        
         <p>Beatniks and hippies welcome, provided they bring the "good vibes" with them and don't arrive shoeless.</p>
-        <p>We ask that our guests respond by December 7.</p>
+        <p>The RSVP window is now closed, as of December 7.</p>
 
         <p>-- R. STERLING</p>
       </article>
@@ -737,13 +639,12 @@ body {
         <ul class="list schedule">
           <li>
             <button class="toggle"><strong>7/00</strong> — Sunset Seafood & Drinks</button>
-            <div class="details">Seafood and Tom Collins' served on the back patio by the harbour. Inside, tune in to BBC's December 31st "Top of the Pops" broadcast, brought to you by our associate at Puttnam, Powell and Lowe.</div>
+            <div class="details">Seafood and Tom Collins' served by the harbour.</div>
           </li>
           <li>
             <button class="toggle"><strong>8/00</strong> — SC&P Presents: Trivia</button>
-            <div class="details">Played during the 31/12/69 ABC Evening News broadcast. Brush up on your 
-              twentieth-century knowledge; questions courtesy of our in-house Creative team. Play in pairs; 
-              winners receive a Koko Black chocolate platypus.</div>
+            <div class="details">Brush up on your twentieth-century knowledge at The Golden Bunny. Play in pairs; 
+              winners receive a Koko Black chocolate bunny.</div>
           </li>
           <li>
             <button class="toggle"><strong>9/00</strong> — Fireworks and Champagne</button>
@@ -751,7 +652,7 @@ body {
           </li>
           <li>
             <button class="toggle"><strong>9/30</strong> — SC&P Presents: Poker</button>
-            <div class="details">Texas Hold 'Em ($20 cash per buy-in). Minimum bet 50c. NBC Radio's All Star Parade of Bands.</div>
+            <div class="details">Texas Hold 'Em at The Golden Bunny ($20 cash per buy-in). Minimum bet 50c.</div>
           </li>
           <li>
             <button class="toggle"><strong>11/00</strong> — NBC Radio's countdown with Guy Lombardo</button>
@@ -759,21 +660,19 @@ body {
           </li>
           <li>
             <button class="toggle"><strong>12/00</strong> — Midnight Fireworks</button>
-            <div class="details">Sydney’s main show. Grab a spot on the patio, or watch the broadcast 
-              live from inside.</div>
+            <div class="details">Sydney’s main show.</div>
           </li>
           <li>
             <button class="toggle"><strong>12/15</strong> — SC&P Presents: Hershey's Buffet</button>
-            <div class="details">A decadent celebration provided by our friends at Hershey's, with cakes, chocolates, 
-              pies and other petit fours. Guests are welcome to provide contributions, 
-              namely: their favourite chocolate.
+            <div class="details">A decadent ordeal provided by Hershey's, with cakes, chocolates, 
+              pies and petit fours. Guests are welcome to provide contributions.
              </div>
           </li>
           <li>
             <button class="toggle"><strong>12/30</strong> — Smoker’s Lounge</button>
-            <div class="details">The end of NBC's broadcast. Cigars and music while the surrounding streets clear out.
+            <div class="details">Cigars and music while the surrounding streets clear out.
               Guests are welcome to stay until exhausted; though the optimal time for departure is before 2am. Public 
-              transport will be grossly congested for at least the first hour, as will rideshare services and roads.
+              transport will be congested for the first hour.
 
             </div>
           </li>
@@ -782,37 +681,37 @@ body {
 
       <!-- House Menu -->
       <article class="card menu-card" aria-labelledby="menu">
-        <h2>Sunset Canapés (7:00-7:45)</h2>
-        <p><strong  style= color:#49254b;>Tiger Prawns</strong> — delivered fresh on ice.</p>
-        <p><strong  style= color:#49254b;>Sydney Rock Oysters</strong> — delivered fresh on ice.</p>
-        <p><strong  style= color:#49254b;>Classic Pepperoni</strong> — from the local woodfire pizzeria.</p>
-        <p><strong  style= color:#49254b;>Seasonal Fruit</strong> — Kensington Pride mangoes, premium cherries.</p>
+        <h2>Seafood & Pizza (7:00-7:45)</h2>
+        <p><strong  style= color:#06a58b;>Tiger Prawns</strong> — fresh on ice.</p>
+        <p><strong  style= color:#06a58b;>Sydney Rock Oysters</strong> — fresh on ice.</p>
+        <p><strong  style= color:#06a58b;>Margherita</strong> — from the local woodfire pizzeria.</p>
+        <p><strong  style= color:#06a58b;>Seasonal Fruit</strong> — Kensington Pride mangoes, premium cherries.</p>
 
-        <h2>Vintage Canapés (8:30-9:00)</h2>  
-        <p><strong>Prawn Cocktails</strong> — vintage-style with cocktail sauce.</p>
-        <p><strong>Deviled Eggs</strong> — vintage-style, with smoked paprika and parsley.</p>
+        <h2>Canapés (8:30-9:00)</h2>  
+        <p><strong>Prawn Cocktails</strong> — with cocktail sauce.</p>
+        <p><strong>Deviled Eggs</strong> — with smoked paprika and parsley.</p>
         <p><strong>Potato Salad</strong> — Japanese mayo, wholegrain mustard and eshallots.</p>
         <p><strong>Chip ’n’ Dip</strong> —  California dip, chips.</p>
         <h2>Fondue (10:00-10:30)</h2>
-        <p><strong style= color:#d4a31a;>Cheese Fondue</strong> — with bread, croquettes and fresh produce.</p>        
+        <p><strong style= color:#d4a31a;>Cheese Fondue</strong> — with croquettes and baby carrots.</p>        
         <p><strong style= color:#d4a31a;>Orange Sherbet</strong> — palette cleanser with thyme.</p>
-        <h2>The Hershey's Buffet (12:15)</h2>
-        <p><strong  style= color:#5a3402;>New York Cheesecake</strong> — with fresh berries.</p>
-        <p><strong  style= color:#5a3402;>Boston Cream Donuts</strong> — an American classic filled with custard.</p>
-        <p><strong  style= color:#5a3402;>Cherry Pie</strong> — American classic with whipped cream.</p>
-        <p><strong  style= color:#5a3402;>Chocolate Bon Bons</strong> — from local boutiques.</p>
+        <h2>Hershey's Buffet (12:15)</h2>
+        <p><strong  style= color:#e25e9c;>New York Cheesecake</strong> — with fresh berries.</p>
+        <p><strong  style= color:#e25e9c;>Boston Creams</strong> — custard-filled donuts with chocolate icing.</p>
+        <p><strong  style= color:#e25e9c;>Cherry Pie</strong> — American classic with whipped cream.</p>
+        <p><strong  style= color:#e25e9c;>Chocolate Bon Bons</strong> — from local boutiques.</p>
 
         <h2 id="menu">Bar</h2>
-        <h3 id="menu">Served On The Hour</h3>
-        <p><strong style= color:#0c7477;>7pm — Tom Collins:</strong> gin, lemon, sugar, soda water.</p>
-        <p><strong style= color:#0c7477;>8pm — Gimlet: </strong>gin, lime, sugar, finger lime pearls.</p>
-        <p><strong style= color:#0c7477;>9pm — Vodka Martini: </strong>vodka, dry vermouth, olive and a twist.</p>
-        <p><strong style= color:#0c7477;>10pm — Old-Fashioned: </strong>whiskey, bitters, sugar, burned orange peel.</p>
-        <p><strong style= color:#0c7477;>11pm — Manhattan: </strong>whiskey, sweet vermouth, bitters.</p>
-        <h3 id="menu">Available All Night</h3>
-        <p><strong style= color:#0c7477;>Beer: </strong>Heineken, Budweiser, "The Albo" Pale Ale (Kirribilli Special).</p>
-        <p><strong style= color:#0c7477;>Non-Alcoholic: </strong>Coca-Cola, Perrier, Shirley Temple, Kool-Aid</p>
-        <p><strong style= color:#0c7477;>Self-serve: </strong>Bloody Mary</p>
+        <h3 id="menu">On The Hour</h3>
+        <p><strong style= color:#eb8f06;>7pm — Tom Collins:</strong> gin, lemon, sugar, soda.</p>
+        <p><strong style= color:#eb8f06;>8pm — Gimlet: </strong>gin, lime, sugar.</p>
+        <p><strong style= color:#eb8f06;>9pm — Vodka Martini: </strong>vodka, dry vermouth and a twist.</p>
+        <p><strong style= color:#eb8f06;>10pm — Old-Fashioned: </strong>whiskey, bitters, sugar, orange peel.</p>
+        <p><strong style= color:#eb8f06;>11pm — Manhattan: </strong>whiskey, sweet vermouth, bitters.</p>
+        <h3 id="menu">All Night</h3>
+        <p><strong style= color:#eb8f06;>Beer: </strong>Heineken, Budweiser, "The Albo" Pale Ale</p>
+        <p><strong style= color:#eb8f06;>Non-Alcoholic: </strong>Coca-Cola, 7Up, Dr. Pepper, Perrier, Dirty Tonic</p>
+        <p><strong style= color:#eb8f06;>Self-serve: </strong>Bloody Mary</p>
       </article>
 
             <!-- Road Closures -->
@@ -846,41 +745,54 @@ body {
         <h2 id="faq">Q&A with Roger Sterling</h2>
         <ul class="faq-list">
           <li>
-            <button class="faq-toggle"><strong>How many people are coming?</strong></button>
-            <div class="faq-details">A tight-knit group of guests have been invited, plus their additionals.</div>
+            <button class="faq-toggle"><strong>How big is the guest list?</strong></button>
+            <div class="faq-details">A tight-knit group.</div>
           </li>
           <li>
-            <button class="faq-toggle"><strong>More than +1?</strong></button>
+            <button class="faq-toggle"><strong>Can I bring extra people?</strong></button>
             <div class="faq-details">We have a "the more, the merrier" policy, but there's no guarantee the doorman will let them in. Should 
               your plus one be of particular importance -- say, an investor, a mistress, or someone who owns a yacht; we will make the necessary adjustments.</div>
           </li>
           <li>
-            <button class="faq-toggle"><strong>What do we bring?</strong></button>
-            <div class="faq-details">Officially, nothing but your spectacular selves. That said, we acknowledge your generosity,
-              and wouldn't want to deprive you of a thoughtful contribution. Beer and food. You can also bring your favourite chocolate 
-              and vinyl. If you're playing poker, you'll need $20 cash for your first buy-in.
+            <button class="faq-toggle"><strong>What should we bring?</strong></button>
+            <div class="faq-details">Officially, nothing but your spectacular selves. That said, we understand the language of generosity,
+              and wouldn't want to deprive you of a thoughtful contribution. You can bring your favourite chocolate 
+              and vinyl record. If you're playing poker, you'll need $20 cash for your first buy-in. Charging bays for standard phone models will
+              be available, as well as bottled water, hydration tablets and medical essentials.
             </div>
           </li>
           <li>
+            <button class="faq-toggle"><strong>Is smoking permitted?</strong></button>
+            <div class="faq-details">Yes, inside The Golden Bunny lounge.</div>
+          </li>
+          <li>
             <button class="faq-toggle"><strong>What happens when we arrive at a checkpoint?</strong></button>
-            <div class="faq-details">There are workarounds, but generally police require proof of address. Apparently, being 
-              devastatingly charming still isn’t considered valid ID in Australia. Should you be unsuccessful in your schmoozing 
-              attempts; we'll collect you.</div>
+            <div class="faq-details">Generally, police require proof of address. Apparently, being 
+              devastatingly charming still isn’t considered valid ID in Australia. Should you be unsuccessful 
+              in your schmoozing attempts; we'll collect you.</div>
           </li>
           <li>
             <button class="faq-toggle"><strong>What is the best way of getting there?</strong></button>
             <div class="faq-details">It depends on your location and time of arrival. Trains will be running to Milson's Point until 6pm. 
-              Ferries to Kirribilli and Milson's Point will not run past 3pm. There should be no delays with the Metro.</div>
+              Ferries to Kirribilli and Milson's Point will not run past 3pm. There should be no delays with the Metro, and the surrounding
+              streets officially close to the public at 5pm.</div>
           </li>
           <li>
-            <button class="faq-toggle"><strong>Do we have to dress to the nines?</strong></button>
+            <button class="faq-toggle"><strong>Do we dress to the nines?</strong></button>
             <div class="faq-details">No. Era-appropriate attire of any nature will do.</div>
           </li>
           <li>
-            <button class="faq-toggle"><strong>Precipitation?</strong></button>
+            <button class="faq-toggle"><strong>And if it rains?</strong></button>
             <div class="faq-details">A portion of the back patio is covered. Bring an umbrella; fireworks will only be cancelled 
               in the event of extreme weather. The fireworks will be televised from the comfort of the apartment, and I assure you, they look just 
               as expensive from the sofa.</div>
+          </li>
+          <li>
+            <button class="faq-toggle"><strong>What if there's an emergency?</strong></button>
+            <div class="faq-details">In the event of an emergency, your host is a competent marshall, and will lead you to safety. Extinguishers
+              are located on the premises, and a Fire Emergency Exit can be found directly outside the apartment, to the left. If an
+              emergency occurs elsewhere within the building, the evacuation point is Waruda Street.
+            </div>
           </li>
         </ul>
       </article>
@@ -1001,15 +913,12 @@ updateBook();
     "Alfonso": { name: "Alfonso",  msg: "Welcome, Tommy!" },
     "Chambers": { name: "Chambers", msg: "Welcome, Tom!" },
     "Carrizosa": { name: "Carrizosa", msg: "Welcome, Andrés!" },
-    "Cheung": { name: "Cheung", msg: "Welcome, Fiona!" },
     "Mutton": { name: "Mutton", msg: "Welcome, Mum & Dad!" },
     "Ferreira": { name: "Ferreira", msg: "Welcome, Larissa!" },
     "Jones": { name: "Jones", msg: "Welcome, Sarah!" },
-    "Smout": { name: "Smout", msg: "Welcome, Smouty!" },
     "Villar": { name: "Villar", msg: "Welcome, Ricky!" },
     "Knezevic": { name: "Knezevic", msg: "Welcome, Snez!" },
     "Torresan": { name: "Torresan", msg: "Welcome, Dani!" },
-    "Gaitan": { name: "Gaitan", msg: "Welcome, Arturo!" },
     "1": { name: "1", msg: "Welcome, Cass!" }
   };
 
@@ -1025,6 +934,39 @@ updateBook();
       error.textContent = "No guest registered to that name.";
     }
   }
+
+// When does check-in open?
+const checkInOpens = new Date("December 31, 2025 17:00:00").getTime();
+
+function updateCheckInStatus() {
+  const now = Date.now();
+  const btn = document.getElementById("checkInBtn");
+  const note = document.getElementById("checkInNote");
+
+  if (now >= checkInOpens) {
+    // Activate button
+    btn.disabled = false;
+    btn.style.cursor = "pointer";
+
+    btn.style.background = "#c9a33b";
+    btn.style.color = "#1b140b";
+    btn.style.opacity = "1";
+
+    note.textContent = "Check-In is now open.";
+
+  } else {
+    // Still locked
+    btn.disabled = true;
+
+    const opensDate = "5pm, December 31";
+    note.textContent = `Available From ${opensDate}.`;
+  }
+}
+
+// Update immediately and then keep checking
+updateCheckInStatus();
+setInterval(updateCheckInStatus, 60000);
+
 
   function showWelcomeMessage(message) {
     const banner = document.createElement("div");
