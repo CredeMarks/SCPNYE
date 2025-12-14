@@ -16,7 +16,8 @@
 
   <style>
 
-    #checkInBtn {
+#checkInBtn {
+  display: none;
   width: 100%;
   padding: 12px;
   font-size: 16px;
@@ -24,12 +25,11 @@
   margin-top: 10px;
   border: 0;
   border-radius: 3px;
-  cursor: not-allowed;
-
-  background: #b8b8b8;
-  color: #555;
-  opacity: 0.7;
+  background: #c9a33b;
+  color: #1b140b;
+  cursor: pointer;
 }
+
 
     :root{
       /* Late-60s cocktail palette */
@@ -50,7 +50,7 @@
       margin:0;
       font-family:"Work Sans",system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--ink);
-      background: url('https://i.imgur.com/9lc14I0.jpeg') center center / cover repeat;
+      background: url('https://img.freepik.com/premium-photo/dark-brown-wood-texture-background-featuring-rich-grains-natural-patterns-ideal-design_966417-2328.jpg?semt=ais_hybrid&w=740&q=80') center center / cover repeat;
                  
     }
 
@@ -65,7 +65,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 1px;
-  background: linear-gradient(180deg, #fffefb 100%, #fffefb 100%);
+  background: linear-gradient(180deg, #9c770850, #9c770850 100%);
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
   padding: 28px;
@@ -96,7 +96,7 @@
   border-radius: 999px;
   font-size: 12px;
   letter-spacing: .08em;
-  background: #fffdf8;
+  background: #fffdf89c;
   text-transform: uppercase;
   color: #574c38;
 }
@@ -195,61 +195,16 @@ body {
     .meta{color:#6a604b;font-size:14px;margin-bottom:10px}
     .list{margin:0;padding-left:20px} .list li{margin:6px 0}
 
-    /* Roger Letter (typewriter card) */
-    .card.roger{
-      font-family:"Special Elite", monospace;
-      color:rgb(43, 21, 4);
-      background:
-        radial-gradient(160px 80px at 30px 28px, rgba(0,0,0,.04), transparent 60%),
-        var(--card);
-      position:relative;
-      /* size knobs (you can override inline via --box-width/--box-height) */
-      width: var(--box-width, auto);
-      height: var(--box-height, auto);
-      padding: 1.5rem;
-      border: 1px solid #ccc;
-      border-radius: 1px;
-      background-image: url('https://img.freepik.com/premium-photo/old-paper-texture-background_118047-12801.jpg');
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      overflow: auto;
-    }
-    .card.roger:before{
-      content:"S C & P  —  INTERNAL MEMO";
-      position:absolute; top:14px; right:16px;
-      font:700 11px "Work Sans",system-ui; letter-spacing:.14em; color:#8a7c62;
-    }
-
-    /* Closures */
-    .card.closures{
-      font-family:"Passion One", sans-serif;
-      color:rgb(51, 49, 47);
-      font-size: 16px;
-      line-height: 0.7;
-      background-image: url('https://i.imgur.com/7BnNKpo.png');
-      position:relative;
-      /* size knobs (you can override inline via --box-width/--box-height) */
-      width: var(--box-width, auto);
-      height: var(--box-height, auto);
-      padding: 1.5rem;
-      border: 1px solid #ccc;
-      border-radius: 1px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      overflow: auto;
-    }
-    .card.closures:before{
-      content:"NY TIMES";
-      position:absolute; top:14px; right:16px;
-      font:700 11px "Work Sans",system-ui; letter-spacing:.14em; color:#8a7c62;
-    }
 
     /* Footer */
     footer{margin:34px 0 60px; text-align:center; color:#877a60}
 
     /* COCKTAIL & FOOD MENU */
     .menu-card {
-      font-family: "IBM Plex Sans Condensed", "Work Sans", sans-serif;
+      font-family: "Abril Fatface", "Abril Fatface", sans-serif;
+      font-size: 13px;
       letter-spacing: 0.02em;
-      background: url('https://i.imgur.com/WSQWV7F.png') center center / cover repeat;
+      background: url('https://www.paperplace.com.au/cdn/shop/products/cacau_-_prisma.jpg') center center / cover repeat;
       border: 1px solid var(--line);
       border-radius: 2px;
       padding: 22px;
@@ -421,7 +376,9 @@ body {
   border-radius: 4px;
   border: 1px solid #ddd2bd;
   box-shadow: 0 12px 40px rgba(0,0,0,.15);
-  font-family: "Libre Baskerville", serif;
+  font-family: "Special Elite", monospace;
+  font-size: 16px;
+  color: #ddd2bd;
   text-align: center;
 
   width: clamp(260px, 80%, 420px);   /* responsive container width */
@@ -465,7 +422,7 @@ body {
   font-family: "Major Mono Display", monospace;
   border: 0;
   background: url('https://www.thinmetalsales.com/wp-content/uploads/ThinMetalSales-234956-Brass-Stainless-Steel-blogbanner1.jpg') center center / cover repeat;
-  color: #1b140b;
+  color: #f1eae0;
   cursor: pointer;
   border-radius: 1px;
   box-shadow: 0 4px 8px rgba(0,0,0,.1);
@@ -500,7 +457,7 @@ body {
   width: clamp(120px, 42vw, 180px);
   height: clamp(150px, 52vw, 240px);
 
-  background: #111;
+  background: #1b1201;
   color: #f1e9d8;
 
   font-family: "Major Mono Display", monospace !important;
@@ -553,7 +510,7 @@ body {
     <div id="countdownBoard" class="flip-container">
       <div class="flip-unit"><span id="cd-days" class="flip" data-val="00">00</span><label>Days</label></div>
     </div>
-    <p>Enter your surname to access the invitation card.</p>
+    <p>Enter surname</p>
     <input id="guestCode" type="password" placeholder="Guest Name">
     <button onclick="checkCode()">Verify</button>
     <p id="gateError"></p>
@@ -576,7 +533,6 @@ body {
       <div class="hero-inner">
         <div>             
           <img src="https://i.imgur.com/MVFuquL.png" alt="Sterling Cooper & Partners Logo" class="hero-logo">
-          <p class="strap">"...Because, when Madison Avenue is freezing, we prefer our ice in a glass."</p>
           <div class="cta-row">
           </div>
         </div>
@@ -605,8 +561,60 @@ body {
       </div>
 </section>
 
+<section class="card" aria-labelledby="arrival">
+  <h2 id="arrival">On Arrival</h2>
+  <ul class="list">
+    <li><strong>Ring</strong> Unit 12.</li>
+    <li><strong>If stopped by security</strong>, say you are a registered guest.</li>
+    <li><strong>Ring the host</strong> if you need assistance.</li>
+    <li><strong>Check in</strong> when asked.</li>
+  </ul>
+</section>
+
     <!-- GRID -->
     <section class="grid">
+          
+      <!-- FAQ: Roger Sterling  -->
+      <article class="faq-card" aria-labelledby="faq">
+        <h2 id="faq">Q&A</h2>
+        <ul class="faq-list">          
+          <li>
+  <button class="faq-toggle"><strong>Will there be roadblocks or security?</strong></button>
+  <div class="faq-details">
+    Due to NYE conditions, police checkpoints and building security may be in place.
+    If asked, state you are a registered guest attending a private event.
+    Ring Unit 12 if you encounter any issues.
+  </div>
+</li>
+
+          </li>
+          <li>
+            <button class="faq-toggle"><strong>What is the best way of getting there?</strong></button>
+            <div class="faq-details">It depends on your location and time of arrival. Trains will be running to Milson's Point until 6pm. 
+              Ferries to Kirribilli and Milson's Point will *not* run past 3pm. There are no scheduled delays with the Sydney Metro.</div>
+          </li>
+          <li>
+            <button class="faq-toggle"><strong>What should I bring?</strong></button>
+            <div class="faq-details">Officially, nothing but your spectacular selves. That said, we understand the language of generosity,
+              and wouldn't want to deprive you of a thoughtful contribution. You can bring your favourite chocolate 
+              and vinyl record. A phone charging bay will be available.
+            </div>
+          </li>          
+          <li>
+            <button class="faq-toggle"><strong>What is "The Golden Bunny"?</strong></button>
+            <div class="faq-details">Sydney's finest, tiniest and most exclusive lounge and bar, brought to you by our friends at Mr Heffner's Playboy Club in Manhattan.</div>
+          </li>
+          <li>
+            <button class="faq-toggle"><strong>Is smoking permitted?</strong></button>
+            <div class="faq-details">Inside The Golden Bunny, and on the back patio.</div>
+          </li>
+
+          <li>
+            <button class="faq-toggle"><strong>What do I wear?</strong></button>
+            <div class="faq-details">Era-appropriate attire (60s- early 70s) of any nature will do.</div>
+          </li>
+        </ul>
+      </article>
 
       <!-- SCHEDULE: Accordion Style -->
       <article class="card" aria-labelledby="sched">
@@ -653,17 +661,27 @@ body {
       <!-- House Menu -->
       <article class="card menu-card" aria-labelledby="menu">
         <h1 style= color:#c99f2e;>The Golden Bunny</h1>
+        <h2 id="menu">Bar</h2>
+        <h3 id="menu">On The Hour</h3>
+        <p><strong style= color:#4679b3;>7pm — Tom Collins:</strong> gin, lemon, sugar, soda.</p>
+        <p><strong style= color:#4679b3;>8pm — Gimlet: </strong>gin, lime, sugar.</p>
+        <p><strong style= color:#4679b3;>9pm — Vodka Martini: </strong>Stoli vodka, Noilly Prat and a twist.</p>
+        <p><strong style= color:#4679b3;>10pm — Old-Fashioned: </strong>Canadian Club, bitters, sugar, orange.</p>
+        <p><strong style= color:#4679b3;>11pm — Manhattan: </strong>Canadian Club, Cinzano Rosso, bitters.</p>
+        <h3 id="menu">All Night</h3>
+        <p><strong style= color:#4679b3;>Beer: </strong>Heineken, Budweiser, "The Albo" Pale Ale</p>
+        <p><strong style= color:#4679b3;>Non-Alcoholic: </strong>Coca-Cola, 7UP, Perrier, Tonic, Pineapple Juice</p>
+        <p><strong style= color:#4679b3;>Self-serve: </strong>Bloody Mary</p>
         <h2>Seafood (7:00-7:45)</h2>
-        <p><strong  style= color:#06a58b;>Tiger Prawns</strong> — fresh on ice.</p>
-        <p><strong  style= color:#06a58b;>Sydney Rock Oysters</strong> — fresh on ice.</p>
-        <p><strong style= color:#06a58b;>Potato Salad</strong> — Japanese mayo, wholegrain mustard and eshallots.</p>
-        <p><strong  style= color:#06a58b;>Seasonal Fruit</strong> — Kensington Pride mangoes, premium cherries.</p>
+        <p><strong  style= color:#dac82b;>Tiger Prawns</strong> — fresh on ice.</p>
+        <p><strong  style= color:#dac82b;>Sydney Rock Oysters</strong> — fresh on ice.</p>
+        <p><strong style= color:#dac82b;>Potato Salad</strong> — mayo, wholegrain mustard, eshallots.</p>
+        <p><strong  style= color:#dac82b;>Seasonal Fruit</strong> — Kensington Pride mangoes, premium cherries.</p>
         <h2>Canapés & Pizza (8:30-9:00)</h2>  
-        <p><strong style= color:#eb8f06;>Prawn Cocktails</strong> — with cocktail sauce.</p>
-        <p><strong style= color:#eb8f06;>Deviled Eggs</strong> — with smoked paprika and parsley.</p>        
-        <p><strong  style= color:#eb8f06;>Classic Pepperoni</strong> — local woodfire pizza.</p>
-
-        <p><strong style= color:#eb8f06;>Chip ’n’ Dip</strong> —  California dip, chips.</p>
+        <p><strong style= color:#ac2b2b;>Prawn Cocktails</strong> — with cocktail sauce.</p>
+        <p><strong style= color:#ac2b2b;>Deviled Eggs</strong> — with smoked paprika and parsley.</p>        
+        <p><strong  style= color:#ac2b2b;>Classic Pepperoni</strong> — local woodfire pizza.</p>
+        <p><strong style= color:#ac2b2b;>Chip ’n’ Dip</strong> —  California dip, chips.</p>
         <h2>Fondue (10:00-10:30)</h2>
         <p><strong style= color:#ffc526;>Fondue</strong> — with croquettes and baby carrots.</p>        
         <p><strong style= color:#ffc526;;>Orange Sherbet</strong> — palette cleanser with thyme.</p>
@@ -672,108 +690,8 @@ body {
         <p><strong  style= color:#e25e9c;>Boston Creams</strong> — custard-filled donuts with chocolate icing.</p>
         <p><strong  style= color:#e25e9c;>Cherry Pie</strong> — American classic with whipped cream.</p>
         <p><strong  style= color:#e25e9c;>Chocolate Bon Bons</strong> — from local boutiques.</p>
-
-        <h2 id="menu">Bar</h2>
-        <h3 id="menu">On The Hour</h3>
-        <p><strong style= color:#eb8f06;>7pm — Tom Collins:</strong> gin, lemon, sugar, soda.</p>
-        <p><strong style= color:#eb8f06;>8pm — Gimlet: </strong>gin, lime, sugar.</p>
-        <p><strong style= color:#eb8f06;>9pm — Vodka Martini: </strong>Stoli vodka, Noilly Prat and a twist.</p>
-        <p><strong style= color:#eb8f06;>10pm — Old-Fashioned: </strong>Canadian Club, bitters, sugar, orange peel.</p>
-        <p><strong style= color:#eb8f06;>11pm — Manhattan: </strong>Canadian Club, Cinzano Rosso, bitters.</p>
-        <h3 id="menu">All Night</h3>
-        <p><strong style= color:#eb8f06;>Beer: </strong>Heineken, Budweiser, "The Albo" Pale Ale</p>
-        <p><strong style= color:#eb8f06;>Non-Alcoholic: </strong>Coca-Cola, 7UP, Perrier, Tonic, Pineapple Juice</p>
-        <p><strong style= color:#eb8f06;>Self-serve: </strong>Bloody Mary</p>
       </article>
 
-            <!-- Road Closures -->
-      <article 
-        class="card closures printable" 
-        aria-labelledby="r1"
-        style="--box-width: autopx; --box-height: autopx;"
-      >
-        <h2 id="r1">Road Closures</h2>
-        <p><strong>4am, Dec 31</strong> Bradfield Hwy.</br> 
-        <p><strong>4am Dec 31</strong> Cahill Expressway</br>
-        <p><strong>6am, Dec 31</strong> Miller's Point / The Rocks</br> 
-        <p><strong>6am, Dec 31</strong> Circular Quay W.</br> 
-        <p><strong>8am, Dec 31</strong> Observatory Hill </br> 
-        <p><strong>12pm, Dec 31</strong> North CBD (Pitt, George)</br> 
-        <p><strong>5pm, Dec 31</strong> Beulah St.</br> 
-        <p><strong>5pm, Dec 31</strong> Kirribilli Ave. </br> 
-        <p><strong>5pm, Dec 31</strong> Waruda St. </br> 
-        <p><strong>7pm, Dec 31</strong> Most CBD roads</br> 
-        <p><strong>11pm, Dec 31</strong> Harbour Bridge </br> 
-        <h2 id="r1">Transport Closures</h2>
-        <p><strong>3pm-midnight</strong> Ferries to Milson's Point, Kirribilli and McMahon's Point.</p> 
-        <p><strong>3pm-midnight</strong> Trains will not stop at Circulay Quay.</p>
-        <p><strong>6pm-midnight</strong> Trains from the city will NOT stop at Milson's Point.</p> 
-        <p><strong>open all night</strong> All Metro stations, including Victoria Cross (North Sydney).</p> 
-
-      </article>
-    
-      <!-- FAQ: Roger Sterling  -->
-      <article class="faq-card" aria-labelledby="faq">
-        <h2 id="faq">Q&A with Roger Sterling</h2>
-        <ul class="faq-list">
-          <li>
-            <button class="faq-toggle"><strong>How big is the guest list?</strong></button>
-            <div class="faq-details">A tight-knit group.</div>
-          </li>
-          <li>
-            <button class="faq-toggle"><strong>Can I bring extra people?</strong></button>
-            <div class="faq-details">We have a "the more, the merrier" policy, but there's no guarantee the doorman will let them in. Should 
-              your plus one be of particular importance -- say, an investor, a mistress, or someone who owns a yacht; we will make the necessary adjustments.</div>
-          </li>
-          <li>
-            <button class="faq-toggle"><strong>What should we bring?</strong></button>
-            <div class="faq-details">Officially, nothing but your spectacular selves. That said, we understand the language of generosity,
-              and wouldn't want to deprive you of a thoughtful contribution. You can bring your favourite chocolate 
-              and vinyl record. Charging bays will be available, as well as bottled water and bathroom amenities.
-            </div>
-          </li>
-          <li>
-            <button class="faq-toggle"><strong>What is "The Golden Bunny"?</strong></button>
-            <div class="faq-details">Sydney's finest, tiniest and most exclusive lounge and bar.</div>
-          </li>
-          <li>
-            <button class="faq-toggle"><strong>Is smoking permitted?</strong></button>
-            <div class="faq-details">Yes, inside The Golden Bunny.</div>
-          </li>
-          <li>
-            <button class="faq-toggle"><strong>What happens when we arrive at a checkpoint?</strong></button>
-            <div class="faq-details">Generally, police require proof of address. Apparently, being 
-              devastatingly charming still isn’t considered valid ID in Australia. Should you be unsuccessful 
-              in your schmoozing attempts; we'll collect you.</div>
-          </li>
-          <li>
-            <button class="faq-toggle"><strong>What is the best way of getting there?</strong></button>
-            <div class="faq-details">It depends on your location and time of arrival. Trains will be running to Milson's Point until 6pm. 
-              Ferries to Kirribilli and Milson's Point will not run past 3pm. There should be no delays with the Metro, and the surrounding
-              streets officially close to the public at 5pm.</div>
-          </li>
-          <li>
-            <button class="faq-toggle"><strong>Do we dress to the nines?</strong></button>
-            <div class="faq-details">No. Era-appropriate attire of any nature will do.</div>
-          </li>
-          <li>
-            <button class="faq-toggle"><strong>And if it rains?</strong></button>
-            <div class="faq-details">A portion of the back patio is covered. Bring an umbrella; fireworks will only be cancelled 
-              in the event of extreme weather. The fireworks will be televised from the comfort of the apartment, and I assure you, they look just 
-              as expensive from the sofa.</div>
-          </li>
-          <li>
-            <button class="faq-toggle"><strong>What if there's an emergency?</strong></button>
-            <div class="faq-details">In the event of an emergency, your host is a competent marshall, and will lead you to safety. Extinguishers
-              are located on the premises, and a Fire Emergency Exit can be found directly outside the apartment, to the left. If an
-              emergency occurs elsewhere within the building, the evacuation point is Waruda Street.
-            </div>
-          </li>
-        </ul>
-      </article>
-
-
-      
   <script>
     /* ================= Accordion: Schedule ================= */
     document.querySelectorAll('.schedule .toggle').forEach(btn => {
@@ -934,8 +852,8 @@ function updateCheckInStatus() {
     // Still locked
     btn.disabled = true;
 
-    const opensDate = "5pm, December 31";
-    note.textContent = `Available From ${opensDate}.`;
+    const opensDate = "December 31";
+    note.textContent = `Check-In Available From ${opensDate}.`;
   }
 }
 
