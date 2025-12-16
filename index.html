@@ -217,13 +217,40 @@ body {
       font-size: 20px;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      color: var(--brand);
+      color: #dbb346;
       margin-top: 0;
       border-bottom: 1px solid var(--line);
       padding-bottom: 6px;
     }
     .menu-card p { margin: 6px 0; font-size: 15px; }
     .menu-card p strong { color: var(--accent-2); font-weight: 600; }
+
+     /* VINYL CRATE */
+    .vinyl-crate {
+      font-family: "Passion One", sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      background: #e2d7c8;
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      color: #2e2c29;
+      line-height: 1;
+    }
+    .vinyl-crate h1 {
+      font-family: "Passion One", sans-serif;
+      font-size: 50px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #1b1e1f;
+      margin-top: 0;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 6px;
+    }
+    .vinyl-crate p { margin: 6px 0; font-size: 15px; }
+    .vinyl-crate p strong { color: var(--accent-2); font-weight: 600; }
+
 
     /* DIRECTORY BOARD */
     article.card[aria-labelledby="sched"] {
@@ -233,7 +260,7 @@ body {
       background-repeat: no-repeat;
       color: #fff;
       font-family: "Abril Fatface", serif;
-      font-size: 16px;
+      font-size: 22px;
       text-transform: Capitalize;
       letter-spacing: 0.05em;
       padding: 24px;
@@ -259,7 +286,7 @@ body {
       width: 100%;
       color: #f1f5f3;
       font-weight: 500;
-      font-size: 18px;
+      font-size: 22px;
       line-height: 1.4;
       margin: 0.4px;
       text-shadow: 0 1px 2px rgba(0,0,0,.5);
@@ -511,7 +538,7 @@ body {
       <div class="flip-unit"><span id="cd-days" class="flip" data-val="00">00</span><label>Days</label></div>
     </div>
     <p>Enter surname</p>
-    <input id="guestCode" type="password" placeholder="Guest Name">
+    <input id="guestCode" type="password" placeholder="Surname">
     <button onclick="checkCode()">Verify</button>
     <p id="gateError"></p>
 
@@ -540,9 +567,8 @@ body {
         <aside>
           <div class="card">
             <ul class="list">
-              <li><strong>Date</strong> Wednesday, <em>31 December</em></li>
               <li><strong>Time</strong> From <em>7:00 PM</em></li>
-              <li><strong>Theme</strong> <em>Mad Men: 1969</em></li>
+              <li><strong>Theme</strong> <em>Mad Men: 1969-70</em></li>
               <li><strong>Fireworks</strong> <em>9:00 PM & 12:00 AM</em></li>
               <li><strong>Address</strong> <em>U12/19 Waruda Street</em></li>
                 <img 
@@ -562,12 +588,12 @@ body {
 </section>
 
 <section class="card" aria-labelledby="arrival">
-  <h2 id="arrival">On Arrival</h2>
+  <h2 id="arrival">Arriving In Kirribilli</h2>
   <ul class="list">
-    <li><strong>Ring</strong> Unit 12.</li>
+    <li><strong>Call</strong> Cass if you have issues getting through checkpoints.</li>
+    <li><strong>Head</strong> to 19 Waruda.</li>
     <li><strong>If stopped by security</strong>, say you are a registered guest.</li>
-    <li><strong>Ring the host</strong> if you need assistance.</li>
-    <li><strong>Check in</strong> when asked.</li>
+    <li><strong>Ring Unit 12</strong> if you need assistance.</li>
   </ul>
 </section>
 
@@ -590,8 +616,8 @@ body {
           </li>
           <li>
             <button class="faq-toggle"><strong>What is the best way of getting there?</strong></button>
-            <div class="faq-details">It depends on your location and time of arrival. Trains will be running to Milson's Point until 6pm. 
-              Ferries to Kirribilli and Milson's Point will *not* run past 3pm. There are no scheduled delays with the Sydney Metro.</div>
+            <div class="faq-details">Trains will be running to Milson's Point until 6pm. Ferries to Kirribilli and Milson's Point will *not* run past 3pm.
+              Streets will be closed past 5pm. There are no scheduled delays with the Sydney Metro.</div>
           </li>
           <li>
             <button class="faq-toggle"><strong>What should I bring?</strong></button>
@@ -602,16 +628,16 @@ body {
           </li>          
           <li>
             <button class="faq-toggle"><strong>What is "The Golden Bunny"?</strong></button>
-            <div class="faq-details">Sydney's finest, tiniest and most exclusive lounge and bar, brought to you by our friends at Mr Heffner's Playboy Club in Manhattan.</div>
+            <div class="faq-details">Sydney's finest, tiniest and most exclusive little bar & lounge.</div>
           </li>
           <li>
             <button class="faq-toggle"><strong>Is smoking permitted?</strong></button>
-            <div class="faq-details">Inside The Golden Bunny, and on the back patio.</div>
+            <div class="faq-details">Inside The Golden Bunny, as well as on the back patio.</div>
           </li>
 
           <li>
             <button class="faq-toggle"><strong>What do I wear?</strong></button>
-            <div class="faq-details">Era-appropriate attire (60s- early 70s) of any nature will do.</div>
+            <div class="faq-details">Era-appropriate attire (60s-early 70s) of any nature.</div>
           </li>
         </ul>
       </article>
@@ -621,12 +647,12 @@ body {
         <h2 id="sched">Schedule</h2>
         <ul class="list schedule">
           <li>
-            <button class="toggle"><strong>7/00</strong> — Sunset Seafood & Drinks</button>
-            <div class="details">Seafood and Tom Collins' served by the harbour.</div>
+            <button class="toggle"><strong>7/00</strong> — Seafood & Drinks</button>
+            <div class="details">Seafood and Tom Collins' by the harbour.</div>
           </li>
           <li>
-            <button class="toggle"><strong>8/00</strong> — Charades at The Golden Bunny</button>
-            <div class="details">Group charades with twentieth century themes and scenarios.</div>
+            <button class="toggle"><strong>8/00</strong> — SC&P Presents: Taboo</button>
+            <div class="details">Custom Mid-Century Taboo prompts.</div>
           </li>
           <li>
             <button class="toggle"><strong>9/00</strong> — Fireworks and Champagne</button>
@@ -637,17 +663,16 @@ body {
             <div class="details">Texas Hold 'Em at The Golden Bunny ($20 cash per buy-in). Minimum bet 50c.</div>
           </li>
           <li>
-            <button class="toggle"><strong>11/00</strong> — NBC's countdown with Guy Lombardo</button>
-            <div class="details">Guy Lombardo's official countdown transmission of the 1969 Waldorf Astoria celebrations.</div>
+            <button class="toggle"><strong>11/00</strong> — 20th Century Trivia</button>
+            <div class="details">Play in teams.</div>
           </li>
           <li>
             <button class="toggle"><strong>12/00</strong> — Midnight Fireworks</button>
             <div class="details">Sydney’s main show.</div>
           </li>
           <li>
-            <button class="toggle"><strong>12/15</strong> — Dessert at The Golden Bunny</button>
-            <div class="details">A decadent ordeal with cakes, chocolates, 
-              pies and petit fours. 
+            <button class="toggle"><strong>12/15</strong> — Dessert</button>
+            <div class="details">A decadent ordeal of cakes, chocolates, pies and petit fours. 
              </div>
           </li>
           <li>
@@ -660,36 +685,36 @@ body {
 
       <!-- House Menu -->
       <article class="card menu-card" aria-labelledby="menu">
-        <h1 style= color:#c99f2e;>The Golden Bunny</h1>
+        <h1 style= color:#dbb346;>The Golden Bunny</h1>
         <h2 id="menu">Bar</h2>
-        <h3 id="menu">On The Hour</h3>
-        <p><strong style= color:#4679b3;>7pm — Tom Collins:</strong> gin, lemon, sugar, soda.</p>
-        <p><strong style= color:#4679b3;>8pm — Gimlet: </strong>gin, lime, sugar.</p>
-        <p><strong style= color:#4679b3;>9pm — Vodka Martini: </strong>Stoli vodka, Noilly Prat and a twist.</p>
-        <p><strong style= color:#4679b3;>10pm — Old-Fashioned: </strong>Canadian Club, bitters, sugar, orange.</p>
-        <p><strong style= color:#4679b3;>11pm — Manhattan: </strong>Canadian Club, Cinzano Rosso, bitters.</p>
+        <h3 id="menu">Served On The Hour</h3>
+        <p><strong style= color:#c99f2e;>7pm — Tom Collins:</strong> gin, lemon, sugar, soda.</p>
+        <p><strong style= color:#c99f2e;>8pm — Gimlet: </strong>gin, lime, sugar.</p>
+        <p><strong style= color:#c99f2e;>9pm — Vodka Martini: </strong>Stoli vodka, Noilly Prat and a twist.</p>
+        <p><strong style= color:#c99f2e;>10pm — Old-Fashioned: </strong>Canadian Club, bitters, sugar, orange.</p>
+        <p><strong style= color:#c99f2e;>11pm — Manhattan: </strong>Canadian Club, Cinzano Rosso, bitters.</p>
         <h3 id="menu">All Night</h3>
-        <p><strong style= color:#4679b3;>Beer: </strong>Heineken, Budweiser, "The Albo" Pale Ale</p>
-        <p><strong style= color:#4679b3;>Non-Alcoholic: </strong>Coca-Cola, 7UP, Perrier, Tonic, Pineapple Juice</p>
-        <p><strong style= color:#4679b3;>Self-serve: </strong>Bloody Mary</p>
+        <p><strong style= color:#c99f2e;>Beer: </strong>Heineken, "The Albo" Pale Ale</p>
+        <p><strong style= color:#c99f2e;>Non-Alcoholic: </strong>Coca-Cola, Tonic</p>
+        <p><strong style= color:#c99f2e;>Self-serve: </strong>Virgin Bloody Mary</p>
         <h2>Seafood (7:00-7:45)</h2>
-        <p><strong  style= color:#dac82b;>Tiger Prawns</strong> — fresh on ice.</p>
-        <p><strong  style= color:#dac82b;>Sydney Rock Oysters</strong> — fresh on ice.</p>
-        <p><strong style= color:#dac82b;>Potato Salad</strong> — mayo, wholegrain mustard, eshallots.</p>
-        <p><strong  style= color:#dac82b;>Seasonal Fruit</strong> — Kensington Pride mangoes, premium cherries.</p>
+        <p><strong  style= color:#c99f2e;>Tiger Prawns</strong> — fresh on ice.</p>
+        <p><strong  style= color:#c99f2e;>Sydney Rock Oysters</strong> — fresh on ice.</p>
+        <p><strong style= color:#c99f2e;>Potato Salad</strong> — mayo, wholegrain mustard, eshallots, dill.</p>
+        <p><strong  style= color:#c99f2e;>Seasonal Fruit</strong> — Kensington Pride mangoes, premium cherries.</p>
         <h2>Canapés & Pizza (8:30-9:00)</h2>  
-        <p><strong style= color:#ac2b2b;>Prawn Cocktails</strong> — with cocktail sauce.</p>
-        <p><strong style= color:#ac2b2b;>Deviled Eggs</strong> — with smoked paprika and parsley.</p>        
-        <p><strong  style= color:#ac2b2b;>Classic Pepperoni</strong> — local woodfire pizza.</p>
-        <p><strong style= color:#ac2b2b;>Chip ’n’ Dip</strong> —  California dip, chips.</p>
+        <p><strong style= color:#c99f2e;>Prawn Cocktails</strong> — with cocktail sauce.</p>
+        <p><strong style= color:#c99f2e;>Deviled Eggs</strong> — with smoked paprika and parsley.</p>        
+        <p><strong  style= color:#c99f2e;>Classic Pepperoni</strong> — local woodfire pizza.</p>
+        <p><strong style= color:#c99f2e;>Chip ’n’ Dip</strong> —  California dip, chips.</p>
         <h2>Fondue (10:00-10:30)</h2>
-        <p><strong style= color:#ffc526;>Fondue</strong> — with croquettes and baby carrots.</p>        
-        <p><strong style= color:#ffc526;;>Orange Sherbet</strong> — palette cleanser with thyme.</p>
+        <p><strong style= color:#c99f2e;>Fondue</strong> — with croquettes and baby carrots.</p>        
+        <p><strong style= color:#c99f2e;>Orange Sherbet</strong> — palette cleanser with thyme.</p>
         <h2>Dessert (12:15)</h2>
-        <p><strong  style= color:#e25e9c;>New York Cheesecake</strong> — with fresh berries.</p>
-        <p><strong  style= color:#e25e9c;>Boston Creams</strong> — custard-filled donuts with chocolate icing.</p>
-        <p><strong  style= color:#e25e9c;>Cherry Pie</strong> — American classic with whipped cream.</p>
-        <p><strong  style= color:#e25e9c;>Chocolate Bon Bons</strong> — from local boutiques.</p>
+        <p><strong  style= color:#c99f2e;>New York Cheesecake</strong> — with fresh berries.</p>
+        <p><strong  style= color:#c99f2e;>Boston Creams</strong> — custard-filled donuts with chocolate icing.</p>
+        <p><strong  style= color:#c99f2e;>Cherry Pie</strong> — American classic with whipped cream.</p>
+        <p><strong  style= color:#c99f2e;>Chocolate Bon Bons</strong> — from local boutiques.</p>
       </article>
 
   <script>
@@ -806,6 +831,7 @@ updateBook();
     "Alfonso": { name: "Alfonso",  msg: "Welcome, Tom!" },
     "Chambers": { name: "Chambers", msg: "Welcome, Tom!" },
     "Carrizosa": { name: "Carrizosa", msg: "Welcome, Andrés!" },
+    "Nunez": { name: "Nunez", msg: "Welcome, Pablito!" },
     "Mutton": { name: "Mutton", msg: "Welcome, Mum & Dad!" },
     "Ferreira": { name: "Ferreira", msg: "Welcome, Larissa!" },
     "Jones": { name: "Jones", msg: "Welcome, Sarah!" },
@@ -914,9 +940,6 @@ function updateCountdown() {
 
   if (diff <= 0) {
     document.getElementById("cd-days").textContent = "00";
-    document.getElementById("cd-hours").textContent = "00";
-    document.getElementById("cd-mins").textContent = "00";
-    document.getElementById("cd-secs").textContent = "00";
     return;
   }
 
@@ -927,9 +950,6 @@ function updateCountdown() {
 
   document.getElementById("cd-days").textContent = String(days).padStart(2, "0");
   document.getElementById("cd-days").setAttribute("data-val", String(days).padStart(2, "0"));
-  document.getElementById("cd-hours").textContent = String(hours).padStart(2, "0");
-  document.getElementById("cd-mins").textContent = String(mins).padStart(2, "0");
-  document.getElementById("cd-secs").textContent = String(secs).padStart(2, "0");
 }
 
 setInterval(updateCountdown, 1000);
